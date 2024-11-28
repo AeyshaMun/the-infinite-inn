@@ -14,9 +14,9 @@ public class BookRoomController {
         this.bookroomUseCaseInteractor = bookroomUseCaseInteractor;
     }
 
-    public void execute(String name, String room_type, String price) {
+    public void execute(String name, String room_type) {
         final BookRoomInputData bookroomInputData = new BookRoomInputData(
-                name, room_type, price);
+                name, room_type);
 
         bookroomUseCaseInteractor.execute(bookroomInputData);
     }
