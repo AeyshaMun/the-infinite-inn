@@ -1,31 +1,46 @@
 package main.java.entity;
 
-public class Room {
-    private final String name;
-    private final String room_num;
-    private final String room_type;
-    private final String price;
+/**
+ * The interface representing a general room.
+ * This interface defines the common properties and behavior
+ * that all types of rooms (such as Suite and EventHall) must implement.
+ */
+public interface Room {
 
-    public Room(String name, String room_num, String room_type, String price) {
-        this.name = name;
-        this.room_num = room_num;
-        this.room_type = room_type;
-        this.price = price;
-    }
+    /**
+     * Returns the name of the person occupying the room.
+     * @return the name of the person.
+     */
+    String getPersonName();
 
-    public String getName() {
-        return name;
-    }
+    /**
+     * Sets the name of the person occupying the room.
+     * @param personName the name of the person to be set.
+     */
+    void setPersonName(String personName);
 
-    public String getRoomNum() {
-        return room_num;
-    }
+    /**
+     * Returns the room number.
+     * @return the room number.
+     */
+    int getRoomNumber();
 
-    public String getRoomType() {
-        return room_type;
-    }
+    /**
+     * Sets the room number for this room.
+     * @param roomNumber the room number to be set.
+     */
+    void setRoomNumber(int roomNumber);
 
-    public String getPrice() {
-        return price;
-    }
+    /**
+     * Returns the price for renting the room.
+     * @return the price of the room.
+     */
+    double getPrice();
+
+    /**
+     * Sets the price for renting the room.
+     * @param price the price to be set for the room.
+     */
+    void setPrice(double price);
 }
+
