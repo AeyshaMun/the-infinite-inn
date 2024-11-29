@@ -1,21 +1,25 @@
 package java.use_case.checkout;
 
 public class CheckoutOutputData {
-    private String username;
-    private boolean useCaseFailed;
+    private String guestID;
+    private boolean success;
+    private String message;
 
-    public CheckoutOutputData(String username, boolean useCaseFailed) {
-        this.username = username;
-        this.useCaseFailed = useCaseFailed;
+    public CheckoutOutputData(String guestID, boolean success, String message) {
+        this.guestID = guestID;
+        this.success = success;
+        this.message = message;
     }
 
-    public String getUsername() {
-        return username;
+    public String getGuestID() {
+        return guestID;
     }
 
-    public boolean isUseCaseFailed() {
-        return useCaseFailed;
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }
-
-

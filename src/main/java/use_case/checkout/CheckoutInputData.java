@@ -1,14 +1,17 @@
 package java.use_case.checkout;
 
 public class CheckoutInputData {
-    private final String username;
+    private final String guestID;
+    private final String roomID;
 
-    public CheckoutInputData(String username) {
-        this.username = username;
+    public CheckoutInputData(String guestID, String roomID) {
+        this.guestID = guestID;
+        this.roomID = roomID;
     }
 
-    public String getUsername() {
-        return username;
+    public String getGuestID() {
+        return guestID;
     }
+    public String getRoomID() {return roomID;}
 
 }
