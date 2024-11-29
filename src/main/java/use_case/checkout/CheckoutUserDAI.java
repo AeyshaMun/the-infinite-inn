@@ -20,6 +20,6 @@ public interface CheckoutUserDAI {
      * @return the RoomID of the current user
      */
 
-    String getRoomIDForGuest(String guestID);
+    String getRoomNumberForGuest(String guestID);
 
 }

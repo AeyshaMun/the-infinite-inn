@@ -14,15 +14,15 @@ public class CheckoutInteractor implements CheckoutInputBoundary {
 
     @Override
     public void execute(CheckoutInputData checkoutInputData) {
-        // Step 1: Get the current guest and room information
         String guestID = userDataAccessObject.getCurrentUsername();
-        String roomID = userDataAccessObject.getRoomIDForGuest(guestID);
+        String roomNumber = userDataAccessObject.getRoomNumberForGuest(guestID);
+
         userDataAccessObject.setCurrentUsername(null);
+        userDataAccessObject.getRoomNumberForGuest(null);
 
         final CheckoutOutputData checkoutOutputData = new CheckoutOutputData(
                 guestID,
-                true,
-                "Checkout Successfully");
+                true);
         checkoutPresenter.prepareSuccessView(checkoutOutputData);
     }
 
