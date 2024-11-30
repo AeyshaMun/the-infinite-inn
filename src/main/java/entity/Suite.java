@@ -2,34 +2,51 @@ package main.java.entity;
 
 public class Suite implements Room {
 
-    private final String personName;
-    private final String roomNumber;
-    private final String roomType;
-    private final String roomPrice;
+    private static int roomCounter = 0;
+    private final String name;
+    private final String room_type;
+    private int roomNumber;
+    private final double price;
 
-    public Suite(String personName, String roomNumber, String roomType, String roomPrice) {
-        this.personName = personName;
-        this.roomNumber = roomNumber;
-        this.roomType = roomType;
-        this.roomPrice = roomPrice;
+    public Suite(String name, String room_type) {
+        this.name = name;
+        this.room_type = room_type;
+        generateRoomNumber();
+        this.price = calculatePrice();
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
-    public String getPersonName() {
-        return personName;
-    }
-
-    @Override
-    public String getRoomNumber() {
+    public int getRoomNumber() {
         return roomNumber;
     }
 
-    public String getRoomType() {
-        return roomType;
+    @Override
+    public void generateRoomNumber() {
+        this.roomNumber = roomCounter++; // Assign current room number, then increment the counter
     }
 
     @Override
-    public String getPrice() {
-        return roomPrice;
+    public double calculatePrice() {
+        if (room_type == "single") {
+            return 120;
+        } else if (room_type == "double") {
+            return 180;
+        } else if (room_type == "family") {
+            return 220;
+        } else {
+            return 120;
+        }
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
     }
 }
+
+
+
