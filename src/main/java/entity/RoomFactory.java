@@ -14,5 +14,5 @@ public interface RoomFactory {
      * @param price the price for renting the room
      * @return the created room object
      */
-    Room create(String personName, int roomNumber, double price);
+    Room create(String personName, String roomNumber, String price);
 }
