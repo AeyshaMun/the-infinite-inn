@@ -17,7 +17,7 @@ public class BookRoomInputData {
         return name;
     }
 
-    String getRoom_type() {
+    String getRoomType() {
         return room_type;
     }
 

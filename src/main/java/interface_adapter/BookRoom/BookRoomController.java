@@ -1,6 +1,6 @@
 package main.java.interface_adapter.BookRoom;
 
-import main.java.use_case.BookRoom.BookRoomInputDataBoundary;
+import main.java.use_case.BookRoom.BookRoomInputBoundary;
 import main.java.use_case.BookRoom.BookRoomInputData;
 
 /**
@@ -8,9 +8,9 @@ import main.java.use_case.BookRoom.BookRoomInputData;
  */
 public class BookRoomController {
 
-    private final BookRoomInputDataBoundary bookroomUseCaseInteractor;
+    private final BookRoomInputBoundary bookroomUseCaseInteractor;
 
-    public BookRoomController(BookRoomInputDataBoundary bookroomUseCaseInteractor) {
+    public BookRoomController(BookRoomInputBoundary bookroomUseCaseInteractor) {
         this.bookroomUseCaseInteractor = bookroomUseCaseInteractor;
     }
 

@@ -2,14 +2,15 @@ package main.java.interface_adapter.BookRoom;
 
 import main.java.interface_adapter.ViewManagerModel;
 import main.java.use_case.BookRoom.BookRoomOutputData;
-import main.java.use_case.BookRoom.BookRoomOutputDataBoundary;
+import main.java.use_case.BookRoom.BookRoomOutputBoundary;
 
-public class BookRoomPresenter implements BookRoomOutputDataBoundary {
+public class BookRoomPresenter implements BookRoomOutputBoundary {
     private final BookRoomViewModel bookroomViewModel;
+    private final ViewManagerModel viewManagerModel;
 
-    public BookRoomPresenter(ViewManagerModel viewManagerModel,
-                             BookRoomViewModel bookroomViewModel) {
+    public BookRoomPresenter(BookRoomViewModel bookroomViewModel, ViewManagerModel viewManagerModel) {
         this.bookroomViewModel = bookroomViewModel;
+        this.viewManagerModel = viewManagerModel;
     }
 
     @Override

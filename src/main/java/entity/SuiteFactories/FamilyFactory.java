@@ -7,8 +7,9 @@ import main.java.entity.Suite;
 public class FamilyFactory implements RoomFactory {
 
     @Override
-    public Room create(String personName, String roomNumber, String roomPrice) {
+    public Room create(String personName, String roomNumber) {
         String roomType = "family";
+        String roomPrice = "$220";
         return new Suite(personName, roomNumber, roomType, roomPrice);
     }
 }
