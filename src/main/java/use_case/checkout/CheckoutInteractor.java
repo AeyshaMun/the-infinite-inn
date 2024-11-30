@@ -15,36 +15,35 @@ public class CheckoutInteractor implements CheckoutInputBoundary {
 
     @Override
     public void execute(CheckoutInputData checkoutInputData) {
-        String guestID = checkoutInputData.getGuestID();
-        String roomNumber = checkoutInputData.getRoomNumber();
+        final String name = checkoutInputData.getName();
+        final int roomNumber = checkoutInputData.getRoomNumber();
+        final boolean isEventHall = checkoutInputData.isEventHall();
 
-        // Validate guest eligibility for checkout
-        if (!userDataAccessObject.isCheckoutEligible(guestID)) {
-            checkoutPresenter.prepareFailView("Guest is not eligible for checkout");
-            return;
-        }
+        try {
+            // Fetch user/room information
+            boolean userExists = userDataAccessObject.findUserByNameAndRoom(name, roomNumber, isEventHall);
 
-        // Check if room is assigned
-        if (roomNumber == null || !roomNumber.equals(userDataAccessObject.getRoomNumberForGuest(guestID))) {
-            checkoutPresenter.prepareFailView("No room assigned to this guest");
-            return;
-        }
+            if (!userExists) {
+                checkoutPresenter.prepareFailView("User or room not found.");
+                return;
+            }
 
-        // Perform checkout
-        boolean checkoutSuccess = userDataAccessObject.performCheckout(guestID, roomNumber);
+            // Perform checkout
+            boolean checkoutSuccessful = userDataAccessObject.removeUserAndRoom(name, roomNumber, isEventHall);
 
-        if (checkoutSuccess) {
-            // Reset guest information
-            userDataAccessObject.resetGuestInfo(guestID);
-
-            CheckoutOutputData successOutput = new CheckoutOutputData(
-                    guestID,
-                    "SUCCESS",
-                    "Checkout completed successfully"
-            );
-            checkoutPresenter.prepareSuccessView(successOutput);
-        } else {
-            checkoutPresenter.prepareFailView("Checkout process failed");
+            if (checkoutSuccessful) {
+                // Prepare success output
+                CheckoutOutputData outputData = new CheckoutOutputData(
+                        name, roomNumber, isEventHall, true, "Checkout successful."
+                );
+                checkoutPresenter.prepareSuccessView(outputData);
+            } else {
+                // Prepare failure output
+                checkoutPresenter.prepareFailView("Failed to complete checkout.");
+            }
+        } catch (Exception e) {
+            // Handle unexpected exceptions
+            checkoutPresenter.prepareFailView("An error occurred during checkout: " + e.getMessage());
         }
     }
 }

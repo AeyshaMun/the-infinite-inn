@@ -4,38 +4,20 @@ package use_case.checkout;
  */
 public interface CheckoutUserDAI {
     /**
-     * Validates if the guest is eligible for checkout
-     * @param guestID the guest to validate
-     * @return true if checkout is possible, false otherwise
+     * Checks if a user exists by name and room number.
+     * @param name The name of the user.
+     * @param roomNumber The room number or event hall.
+     * @param isEventHall Indicates if it's an event hall.
+     * @return true if the user exists, false otherwise.
      */
-    boolean isCheckoutEligible(String guestID);
+    boolean findUserByNameAndRoom(String name, int roomNumber, boolean isEventHall);
 
     /**
-     * Sets the guest ID indicating who is the current guest of the application.
-     * @param guestID the new current username
+     * Removes the association of the user with the room or event hall.
+     * @param name The name of the user.
+     * @param roomNumber The room number or event hall.
+     * @param isEventHall Indicates if it's an event hall.
+     * @return true if the removal is successful, false otherwise.
      */
-    void setCurrentUsername(String guestID);
-
-    /**
-     * Returns the RoomID of the curren user of the application.
-     * @return the RoomID of the current user
-     */
-
-    String getRoomNumberForGuest(String guestID);
-
-    /**
-     * Perform the actual checkout process
-     * @param guestID the guest to check out
-     * @param roomNumber the room to be checked out
-     * @return true if checkout was successful
-     */
-
-    boolean performCheckout(String guestID, String roomNumber);
-
-    /**
-     * Reset guest and room information after checkout
-     * @param guestID the guest to reset
-     */
-    void resetGuestInfo(String guestID);
-
+    boolean removeUserAndRoom(String name, int roomNumber, boolean isEventHall);
 }

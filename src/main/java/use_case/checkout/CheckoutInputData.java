@@ -1,17 +1,34 @@
 package use_case.checkout;
 
 public class CheckoutInputData {
-    private final String guestID; //or guestname?
-    private final String roomNumber;
+    private final String name;
+    private final int roomNumber;
+    private final boolean isEventHall;
 
-    public CheckoutInputData(String guestID, String roomNumber) {
-        this.guestID = guestID;
+    // Constructor for guest room checkout
+    public CheckoutInputData(String name, int roomNumber) {
+        this.name = name;
         this.roomNumber = roomNumber;
+        this.isEventHall = false;
     }
 
-    public String getGuestID() {
-        return guestID;
+    // Constructor for event hall checkout
+    public CheckoutInputData(String name, int roomNumber, boolean isEventHall) {
+        this.name = name;
+        this.roomNumber = roomNumber;
+        this.isEventHall = isEventHall;
     }
-    public String getRoomNumber() {return roomNumber;}
 
+
+    public String getName() {
+        return name;
+    }
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public boolean isEventHall() {
+        return isEventHall;
+    }
 }
