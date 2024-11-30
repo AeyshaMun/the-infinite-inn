@@ -1,4 +1,4 @@
-package java.use_case.checkout;
+package use_case.checkout;
 
 public interface CheckoutOutputBoundary {
     /**

@@ -1,4 +1,4 @@
-package java.interface_adapter.checkout;
+package interface_adapter.checkout;
 
 public class CheckoutState {
     private String guestID;

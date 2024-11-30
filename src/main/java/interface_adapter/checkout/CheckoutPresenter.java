@@ -1,6 +1,6 @@
-package java.interface_adapter.checkout;
-import java.use_case.checkout.CheckoutOutputBoundary;
-import java.use_case.checkout.CheckoutOutputData;
+package interface_adapter.checkout;
+import use_case.checkout.CheckoutOutputBoundary;
+import use_case.checkout.CheckoutOutputData;
 /**
  * The presenter for the Checkout use case.
  * Responsible for preparing the view model state based on the interactor's output.

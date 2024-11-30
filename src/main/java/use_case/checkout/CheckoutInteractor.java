@@ -1,4 +1,5 @@
-package java.use_case.checkout;
+package use_case.checkout;
+
 /**
  * The Checkout Interactor.
  */

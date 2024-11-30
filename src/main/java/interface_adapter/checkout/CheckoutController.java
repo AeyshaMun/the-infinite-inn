@@ -1,7 +1,7 @@
-package java.interface_adapter.checkout;
+package interface_adapter.checkout;
 
-import java.use_case.checkout.CheckoutInputBoundary;
-import java.use_case.checkout.CheckoutInputData;
+import use_case.checkout.CheckoutInputBoundary;
+import use_case.checkout.CheckoutInputData;
 
 public class CheckoutController {
     private final CheckoutInputBoundary checkoutInteractor;
