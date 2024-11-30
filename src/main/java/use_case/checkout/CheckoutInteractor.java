@@ -14,16 +14,36 @@ public class CheckoutInteractor implements CheckoutInputBoundary {
 
     @Override
     public void execute(CheckoutInputData checkoutInputData) {
-        String guestID = userDataAccessObject.getCurrentUsername();
-        String roomNumber = userDataAccessObject.getRoomNumberForGuest(guestID);
+        String guestID = checkoutInputData.getGuestID();
+        String roomNumber = checkoutInputData.getRoomNumber();
 
-        userDataAccessObject.setCurrentUsername(null);
-        userDataAccessObject.getRoomNumberForGuest(null);
+        // Validate guest eligibility for checkout
+        if (!userDataAccessObject.isCheckoutEligible(guestID)) {
+            checkoutPresenter.prepareFailView("Guest is not eligible for checkout");
+            return;
+        }
 
-        final CheckoutOutputData checkoutOutputData = new CheckoutOutputData(
-                guestID,
-                true);
-        checkoutPresenter.prepareSuccessView(checkoutOutputData);
+        // Check if room is assigned
+        if (roomNumber == null || !roomNumber.equals(userDataAccessObject.getRoomNumberForGuest(guestID))) {
+            checkoutPresenter.prepareFailView("No room assigned to this guest");
+            return;
+        }
+
+        // Perform checkout
+        boolean checkoutSuccess = userDataAccessObject.performCheckout(guestID, roomNumber);
+
+        if (checkoutSuccess) {
+            // Reset guest information
+            userDataAccessObject.resetGuestInfo(guestID);
+
+            CheckoutOutputData successOutput = new CheckoutOutputData(
+                    guestID,
+                    "SUCCESS",
+                    "Checkout completed successfully"
+            );
+            checkoutPresenter.prepareSuccessView(successOutput);
+        } else {
+            checkoutPresenter.prepareFailView("Checkout process failed");
+        }
     }
-
 }

@@ -4,10 +4,11 @@ package java.use_case.checkout;
  */
 public interface CheckoutUserDAI {
     /**
-     * Returns the guest ID of the current guest of the application.
-     * @return the guest ID of the current guest
+     * Validates if the guest is eligible for checkout
+     * @param guestID the guest to validate
+     * @return true if checkout is possible, false otherwise
      */
-    String getCurrentUsername();
+    boolean isCheckoutEligible(String guestID);
 
     /**
      * Sets the guest ID indicating who is the current guest of the application.
@@ -21,5 +22,20 @@ public interface CheckoutUserDAI {
      */
 
     String getRoomNumberForGuest(String guestID);
+
+    /**
+     * Perform the actual checkout process
+     * @param guestID the guest to check out
+     * @param roomNumber the room to be checked out
+     * @return true if checkout was successful
+     */
+
+    boolean performCheckout(String guestID, String roomNumber);
+
+    /**
+     * Reset guest and room information after checkout
+     * @param guestID the guest to reset
+     */
+    void resetGuestInfo(String guestID);
 
 }

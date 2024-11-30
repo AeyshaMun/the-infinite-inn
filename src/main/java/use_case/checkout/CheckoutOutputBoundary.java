@@ -3,13 +3,13 @@ package java.use_case.checkout;
 public interface CheckoutOutputBoundary {
     /**
      * Prepares the success view
-     * @param outputData the output data
+     * @param checkoutOutputData the output data
      */
-    void prepareSuccessView(CheckoutOutputData outputData);
+    void prepareSuccessView(CheckoutOutputData checkoutOutputData);
 
     /**
      * Prepares the failure view
-     * @param errorMessage the explanation of the failure
+     * @param failureMessage the explanation of the failure
      */
-    void prepareFailView(String errorMessage);
+    void prepareFailView(String failureMessage);
 }
