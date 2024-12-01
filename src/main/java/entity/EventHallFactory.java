@@ -1,20 +1,13 @@
 package main.java.entity;
 
-public class EventHallFactory implements RoomFactory {
-    private int capacity;
-    private boolean isIndoors;
+public class EventHallFactory {
 
-    public EventHallFactory(int capacity, boolean isIndoors) {
-        this.capacity = capacity;
-        this.isIndoors = isIndoors;
-    }
-
-    @Override
-    public Room create() {
-        // Create and return a new EventHall instance
-        return new EventHall(capacity, isIndoors);
+    /**
+     * Creates a new EventHall with the given party size.
+     * @param partySize the size of the party for the event
+     * @return a new EventHall instance
+     */
+    public Room create(int partySize) {
+        return new EventHall(partySize);  // Return as Room type
     }
 }
-
-
-
