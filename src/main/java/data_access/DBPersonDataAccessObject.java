@@ -12,9 +12,8 @@ import com.mongodb.client.MongoDatabase;
 
 import entity.Person;
 import org.bson.Document;
-import entity.Guest;
 
-public class DBGuestDataAccessObject {
+public class DBPersonDataAccessObject {
     /* connect to the database THIS CODE IS FROM MongoDB DOCUMENTATION */
     static MongoDatabase database;
 
@@ -42,16 +41,16 @@ public class DBGuestDataAccessObject {
         }
     }
 
-    public static void saveGuest(Guest guest){
+    public static void saveGuest(Person person){
         MongoCollection<Document> collection = database.getCollection("guests");
 
         Document document = new Document()
-                .append("name", guest.getName())
-                .append("accommodations", guest.getAccommodations());
+                .append("name", person.getName())
+                .append("accommodations", person.getAccommodations());
 
         collection.insertOne(document);
     }
-    public static void Accommodations(Person person) {
+    public static void accommodations(Person person) {
         MongoCollection<Document> collection = database.getCollection("guests");
 
         Document filter = new Document("name", person.getName());
