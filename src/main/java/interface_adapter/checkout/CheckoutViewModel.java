@@ -1,13 +1,27 @@
 package interface_adapter.checkout;
 
-import java.interface_adapter.ViewModel;
+import main.java.interface_adapter.ViewModel;
 
 /**
- * ViewModel for handling the checkout state in the Inn system.
+ * The ViewModel for the Checkout View.
  */
 public class CheckoutViewModel extends ViewModel<CheckoutState> {
 
-    public CheckoutViewModel() {
+    private CheckoutController controller;
+
+    public CheckoutViewModel(CheckoutController controller) {
         super("Checkout");
+        this.controller = controller;
+        setState(new CheckoutState());
+    }
+
+    // This method now simply forwards to the controller
+    public void executeCheckout() {
+        CheckoutState currentState = getState();
+        controller.execute(
+                currentState.getName(),
+                currentState.getRoomNumber(),
+                false  // assuming this is not an event hall, adjust as needed
+        );
     }
 }

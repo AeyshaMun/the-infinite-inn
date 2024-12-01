@@ -1,27 +1,24 @@
 package interface_adapter.checkout;
 
+/**
+ * The state for the Checkout View Model.
+ */
 public class CheckoutState {
-    private String guestID;
-    private boolean checkoutStatus;
+    private boolean success;
     private String message;
-    private String errorStatus;
+    private String name;
+    private int roomNumber;
 
-    // Getters and setters
-    public String getGuestID() {
-        return guestID;
+    // Getter and Setter for success
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setGuestID(String guestID) {
-        this.guestID = guestID;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
-    public boolean isCheckoutStatus() {
-        return checkoutStatus;
-    }
-    public void setCheckoutStatus(boolean checkoutStatus) {
-        this.checkoutStatus = checkoutStatus;
-    }
-
+    // Getter and Setter for message
     public String getMessage() {
         return message;
     }
@@ -30,20 +27,21 @@ public class CheckoutState {
         this.message = message;
     }
 
-    public String getErrorStatus() {
-        return errorStatus;
+    // Getter and Setter for name
+    public String getName() {
+        return name;
     }
 
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
+    public void setName(String name) {
+        this.name = name;
     }
-    // Create a copy method for immutability
-    public CheckoutState copy() {
-        CheckoutState newState = new CheckoutState();
-        newState.guestID = this.guestID;
-        newState.checkoutStatus = this.checkoutStatus;
-        newState.message = this.message;
-        newState.errorStatus = this.errorStatus;
-        return newState;
+
+    // Getter and Setter for roomNumber
+    public int getRoomNumber() {
+        return this.roomNumber;
+    }
+
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 }

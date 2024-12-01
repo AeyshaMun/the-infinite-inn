@@ -10,12 +10,13 @@ public class CheckoutController {
         this.checkoutInteractor = checkoutInteractor;
     }
     /**
-     * Executes the Login Use Case.
-     * @param guestID the id of the guest logging in
-     * @param roomNumber the room Number logging in
+     * Handles the checkout request.
+     * @param name the name of the guest or client.
+     * @param roomNumber the room or event hall number.
+     * @param isEventHall true if checking out from an event hall, false otherwise.
      */
-    public void execute(String guestID, String roomNumber) {
-        final CheckoutInputData inputData = new CheckoutInputData(guestID, roomNumber);
+    public void execute(String name, int roomNumber, boolean isEventHall) {
+        final CheckoutInputData inputData = new CheckoutInputData(name, roomNumber, isEventHall);
 
         checkoutInteractor.execute(inputData);
     }
