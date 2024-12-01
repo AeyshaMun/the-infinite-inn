@@ -1,4 +1,6 @@
-package main.java.entity;
+package entity;
+
+import entity.Person;
 
 /**
  * Factory for creating users.
@@ -9,6 +11,6 @@ public interface PersonFactory {
      * @param name the name of the new person
      * @return the new person
      */
-    Person create(String name);
+    Person create(String name, String accommodations);
 
 }
