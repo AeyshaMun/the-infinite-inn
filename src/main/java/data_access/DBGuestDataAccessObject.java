@@ -56,19 +56,17 @@ public class DBGuestDataAccessObject {
 
         Document filter = new Document("name", person.getName());
 
-        Document update = new Document();
+        Document existingGuest = collection.find(filter).first();
+        if (existingGuest != null) {
+            String currentAccommodations = existingGuest.getString("accommodations");
+            String newAccommodations = person.getAccommodations();
+            String updatedAccommodations = currentAccommodations + ", " + newAccommodations;
 
-        if (person.getAccommodations() != null) {
-            update.append("accommodations", person.getAccommodations());
-        }
-
-        if (!update.isEmpty()) {
-            update = new Document("$set", update);
+            Document update = new Document("$set", new Document("accommodations", updatedAccommodations));
 
             try {
                 collection.updateOne(filter, update);
-            }
-            catch (MongoException e) {
+            } catch (MongoException e) {
                 e.printStackTrace();
             }
         }
