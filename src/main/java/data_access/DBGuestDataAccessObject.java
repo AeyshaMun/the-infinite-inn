@@ -10,6 +10,7 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
+import entity.Person;
 import org.bson.Document;
 import entity.Guest;
 
@@ -50,19 +51,19 @@ public class DBGuestDataAccessObject {
 
         collection.insertOne(document);
     }
-    public static void Accommodations(Guest guest) {
+    public static void Accommodations(Person person) {
         MongoCollection<Document> collection = database.getCollection("guests");
 
-        Document filter = new Document("name", guest.getName());
+        Document filter = new Document("name", person.getName());
 
         Document update = new Document();
 
-        if (guest.getAccommodations() != null) {
-            update.append("accommodations", guest.getAccommodations());
+        if (person.getAccommodations() != null) {
+            update.append("accommodations", person.getAccommodations());
         }
 
         if (!update.isEmpty()) {
-            final Document update = new Document("$set", update);
+            update = new Document("$set", update);
 
             try {
                 collection.updateOne(filter, update);
