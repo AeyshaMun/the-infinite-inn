@@ -1,9 +1,10 @@
 package interface_adapter.checkout;
 
 import main.java.interface_adapter.ViewManagerModel;
+import main.java.interface_adapter.ViewModel;
+
 import use_case.checkout.CheckoutOutputBoundary;
 import use_case.checkout.CheckoutOutputData;
-
 
 /**
  * The presenter for the Checkout use case.
@@ -70,4 +71,6 @@ public class CheckoutPresenter implements CheckoutOutputBoundary {
         // Fire PropertyChangeEvent to notify the view of the updated state
         viewModel.firePropertyChanged();
     }
-}}
+}
+
+//have to deal with reds

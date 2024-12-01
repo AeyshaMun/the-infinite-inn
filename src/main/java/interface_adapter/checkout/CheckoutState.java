@@ -45,3 +45,5 @@ public class CheckoutState {
         this.roomNumber = roomNumber;
     }
 }
+
+// may be deleted
