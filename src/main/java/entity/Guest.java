@@ -1,6 +1,6 @@
 package entity;
 
-import data_access.DBGuestDataAccessObject;
+import data_access.DBPersonDataAccessObject;
 
 public class Guest implements Person {
     // note to self: make these protected attributes
@@ -11,7 +11,7 @@ public class Guest implements Person {
         this.name = name;
         this.accommodations = "";
 
-        DBGuestDataAccessObject.saveGuest(this);
+        DBPersonDataAccessObject.savePerson(this);
     }
 
     public String getName() {
