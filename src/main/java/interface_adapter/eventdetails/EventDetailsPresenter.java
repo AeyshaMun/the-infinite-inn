@@ -1,10 +1,12 @@
-package main.java.interface_adapter.eventdetails;
+package interface_adapter.eventdetails;
 
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.interface_adapter.eventforecast.EventForecastState;
-import main.java.interface_adapter.eventforecast.EventForecastViewModel;
-import main.java.use_case.eventdetails.EventDetailsOutputBoundary;
-import main.java.use_case.eventdetails.EventDetailsOutputData;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.eventforecast.EventForecastState;
+import interface_adapter.eventforecast.EventForecastViewModel;
+import interface_adapter.main_page.MainPageViewModel;
+import use_case.eventdetails.EventDetailsOutputBoundary;
+import use_case.eventdetails.EventDetailsOutputData;
+
 
 /**
  * The Presenter for the EventDetails Use Case.
@@ -65,7 +67,7 @@ public class EventDetailsPresenter implements EventDetailsOutputBoundary {
 
     @Override
     public void switchToHomeView() {
-        viewManagerModel.setState(homeViewModel.getViewName());
+        viewManagerModel.setState(MainPageViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
     }
 }

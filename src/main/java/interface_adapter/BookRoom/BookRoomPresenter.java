@@ -1,8 +1,9 @@
-package main.java.interface_adapter.BookRoom;
+package interface_adapter.BookRoom;
 
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.use_case.BookRoom.BookRoomOutputData;
-import main.java.use_case.BookRoom.BookRoomOutputBoundary;
+import interface_adapter.ViewManagerModel;
+import use_case.BookRoom.BookRoomOutputData;
+import use_case.BookRoom.BookRoomOutputBoundary;
+import interface_adapter.BookRoom.BookRoomViewModel;
 
 public class BookRoomPresenter implements BookRoomOutputBoundary {
     private final BookRoomViewModel bookroomViewModel;

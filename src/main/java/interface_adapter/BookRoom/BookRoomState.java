@@ -1,4 +1,4 @@
-package main.java.interface_adapter.BookRoom;
+package interface_adapter.BookRoom;
 
 /**
  * The state for the BookRoom View Model.

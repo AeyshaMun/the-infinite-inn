@@ -1,7 +1,7 @@
-package main.java.interface_adapter.eventdetails;
+package interface_adapter.eventdetails;
 
-import main.java.use_case.eventdetails.EventDetailsInputBoundary;
-import main.java.use_case.eventdetails.EventDetailsInputData;
+import use_case.eventdetails.EventDetailsInputBoundary;
+import use_case.eventdetails.EventDetailsInputData;
 
 /**
  * Controller for the Event Details Use Case.

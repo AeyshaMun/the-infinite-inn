@@ -1,7 +1,5 @@
 package entity;
 
-import entity.Person;
-
 /**
  * Factory for creating users.
  */

@@ -1,4 +1,4 @@
-package main.java.use_case.eventdetails;
+package use_case.eventdetails;
 
 /**
  * The Input Data for the Event Details Use Case.

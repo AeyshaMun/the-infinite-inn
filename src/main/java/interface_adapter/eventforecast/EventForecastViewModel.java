@@ -1,6 +1,6 @@
-package main.java.interface_adapter.eventforecast;
+package interface_adapter.eventforecast;
 
-import main.java.interface_adapter.ViewModel;
+import interface_adapter.ViewModel;
 
 /**
  * The ViewModel for the Event Details View.

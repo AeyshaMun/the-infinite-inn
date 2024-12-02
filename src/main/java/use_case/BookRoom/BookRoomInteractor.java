@@ -1,7 +1,8 @@
-package main.java.use_case.BookRoom;
+package use_case.BookRoom;
 
-import main.java.entity.RoomFactory;
-import main.java.entity.SuiteFactory;
+import entity.RoomFactory;
+import entity.SuiteFactory;
+
 
 public class BookRoomInteractor implements BookRoomInputBoundary {
     private final BookRoomDataAccessInterface suiteDataAccessObject;

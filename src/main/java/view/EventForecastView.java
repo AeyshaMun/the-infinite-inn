@@ -1,9 +1,9 @@
-package main.java.view;
+package view;
 
-import main.java.interface_adapter.eventdetails.EventDetailsViewModel;
-import main.java.interface_adapter.eventforecast.EventForecastController;
-import main.java.interface_adapter.eventforecast.EventForecastState;
-import main.java.interface_adapter.eventforecast.EventForecastViewModel;
+import interface_adapter.eventdetails.EventDetailsViewModel;
+import interface_adapter.eventforecast.EventForecastController;
+import interface_adapter.eventforecast.EventForecastState;
+import interface_adapter.eventforecast.EventForecastViewModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,8 +12,8 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import static main.java.interface_adapter.eventforecast.EventForecastViewModel.INDOORS_BUTTON_LABEL;
-import static main.java.interface_adapter.eventforecast.EventForecastViewModel.OUTDOORS_BUTTON_LABEL;
+import static interface_adapter.eventforecast.EventForecastViewModel.INDOORS_BUTTON_LABEL;
+import static interface_adapter.eventforecast.EventForecastViewModel.OUTDOORS_BUTTON_LABEL;
 
 public class EventForecastView extends JPanel implements PropertyChangeListener {
 

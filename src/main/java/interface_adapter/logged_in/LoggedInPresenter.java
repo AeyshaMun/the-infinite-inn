@@ -3,7 +3,7 @@ package interface_adapter.logged_in;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.accommodations.AccommodationsViewModel;
 import interface_adapter.checkout.CheckoutViewModel;
-import interface_adapter.placeOrder.BookRoomViewModel;
+import interface_adapter.BookRoom.BookRoomViewModel;
 import use_case.logged_in.LoggedInOutputBoundary;
 
 /**

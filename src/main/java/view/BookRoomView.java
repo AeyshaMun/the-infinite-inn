@@ -1,4 +1,4 @@
-package main.java.view;
+package view;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,9 +8,11 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import main.java.interface_adapter.BookRoom.BookRoomState;
-import main.java.interface_adapter.BookRoom.BookRoomViewModel;
-import main.java.interface_adapter.BookRoom.BookRoomController;
+import interface_adapter.BookRoom.BookRoomState;
+import interface_adapter.BookRoom.BookRoomViewModel;
+import interface_adapter.BookRoom.BookRoomController;
+
+import view.LabelTextPanel;
 
 
 public class BookRoomView extends JPanel implements ActionListener {

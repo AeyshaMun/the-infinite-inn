@@ -1,10 +1,14 @@
-package main.java.use_case.BookRoom;
-import main.java.entity.Suite;
+package use_case.BookRoom;
+import entity.Room;
 
 /**
  * DAO for the Signup Use Case.
  */
 public class BookRoomDataAccessInterface {
 
-    void save(Suite suite);
+    /**
+     * Saves the guest.
+     * @param room the user to save
+     */
+//    void save(Room room);
 }

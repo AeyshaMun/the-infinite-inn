@@ -1,7 +1,7 @@
-package main.java.use_case.eventforecast;
+package use_case.eventforecast;
 
-import main.java.entity.*;
-import main.java.interface_adapter.eventforecast.WeatherService;
+import entity.*;
+import interface_adapter.eventforecast.WeatherService;
 
 /**
  * The Event Forecast Interactor.

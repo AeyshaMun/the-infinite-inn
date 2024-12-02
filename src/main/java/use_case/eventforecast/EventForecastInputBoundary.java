@@ -1,6 +1,6 @@
-package main.java.use_case.eventforecast;
+package use_case.eventforecast;
 
-import main.java.use_case.eventforecast.EventForecastInputData;
+import use_case.eventforecast.EventForecastInputData;
 
 public interface EventForecastInputBoundary {
     /**

@@ -1,6 +1,6 @@
-package main.java.interface_adapter.eventforecast;
+package interface_adapter.eventforecast;
 
-import main.java.entity.EventForecast;
+import entity.EventForecast;
 
 public class WeatherService {
     private final String apiKey;
