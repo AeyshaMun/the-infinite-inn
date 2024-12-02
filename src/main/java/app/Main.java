@@ -33,8 +33,9 @@ public class Main {
                 .addLoginUseCase()
 
                 .addLoggedInUseCase()
-
-                .addBookRoomUseCase()
+                .addEventDetailUseCase()
+                .addEventForecast()
+                .addEventSummary()
                 .addAccommodationUseCase()
                 .addPlaceOrderUseCase()
                 .addCheckoutUseCase()
