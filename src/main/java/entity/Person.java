@@ -1,4 +1,4 @@
-package main.java.entity;
+package entity;
 
 /**
  * The representation of a person in our program.
@@ -10,4 +10,6 @@ public interface Person {
      * @return the name of the person.
      */
     String getName();
+
+    String getAccommodations();
 }
