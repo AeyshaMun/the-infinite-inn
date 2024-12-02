@@ -1,4 +1,4 @@
-package main.java.entity;
+package entity;
 
 /**
  * A simple implementation of the Person interface.

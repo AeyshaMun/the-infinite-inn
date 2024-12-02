@@ -1,4 +1,4 @@
-package main.java.use_case.BookRoom;
+package use_case.BookRoom;
 
 public interface BookRoomInputDataBoundary {
 

@@ -1,5 +1,5 @@
-package main.java.use_case.BookRoom;
-import main.java.entity.Room;
+package use_case.BookRoom;
+import entity.Room;
 
 /**
  * DAO for the Signup Use Case.

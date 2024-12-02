@@ -1,4 +1,4 @@
-package main.java.entity;
+package entity;
 
 public class EventHallFactory implements RoomFactory {
     private int capacity;

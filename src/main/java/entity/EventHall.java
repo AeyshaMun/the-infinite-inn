@@ -1,4 +1,4 @@
-package main.java.entity;
+package entity;
 
 /**
  * Represents an Event Hall, a type of room in the system.
