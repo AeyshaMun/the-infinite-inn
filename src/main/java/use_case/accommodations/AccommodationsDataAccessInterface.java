@@ -1,12 +1,13 @@
 package use_case.accommodations;
 
-import entity.Guest;
+import entity.Person;
 
-public class AccommodationsDataAccessInterface {
+public  interface AccommodationsDataAccessInterface {
     /**
-     * Updates the system to record this guest's password.
-     * @param guest the guest whose accommodations is to be updated
+     * Updates the system to record this person's accommodations.
+     * @param person the person whose accommodations is to be updated
      */
 
-    void Accommodations(Guest guest);
+    void accommodations(Person person);
+
 }
