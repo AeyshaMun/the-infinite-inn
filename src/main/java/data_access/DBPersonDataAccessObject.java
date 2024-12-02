@@ -41,7 +41,7 @@ public class DBPersonDataAccessObject {
         }
     }
 
-    public static void saveGuest(Person person){
+    public static void savePerson(Person person){
         MongoCollection<Document> collection = database.getCollection("guests");
 
         Document document = new Document()
@@ -50,7 +50,7 @@ public class DBPersonDataAccessObject {
 
         collection.insertOne(document);
     }
-    public static void accommodations(Person person) {
+    public static boolean accommodations(Person person) {
         MongoCollection<Document> collection = database.getCollection("guests");
 
         Document filter = new Document("name", person.getName());
@@ -65,9 +65,11 @@ public class DBPersonDataAccessObject {
 
             try {
                 collection.updateOne(filter, update);
+                return true;
             } catch (MongoException e) {
                 e.printStackTrace();
             }
         }
+        return false;
     }
 }

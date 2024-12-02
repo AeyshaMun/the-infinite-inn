@@ -1,4 +1,26 @@
 package interface_adapter.accommodations;
 
-public class AccommodationsPresenter {
+import use_case.accommodations.AccommodationsOutputBoundary;
+import use_case.accommodations.AccommodationsOutputData;
+
+public class AccommodationsPresenter implements AccommodationsOutputBoundary {
+
+    private final AccommodationsViewModel accommodationsViewModel;
+
+    public AccommodationsPresenter(AccommodationsViewModel accommodationsViewModel) {
+        this.accommodationsViewModel = accommodationsViewModel;
+    }
+
+
+    @Override
+    public void prepareSuccessView(AccommodationsOutputData outputData) {
+        accommodationsViewModel.firePropertyChanged("accommodations");
+    }
+
+    @Override
+    public void prepareFailView(String errorMessage) {
+        accommodationsViewModel.firePropertyChanged("accommodationsFail");
+    }
 }
+
+
