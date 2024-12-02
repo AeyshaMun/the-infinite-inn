@@ -1,27 +1,18 @@
 package use_case.place_order;
 
-import main.java.entity.OrderFactory;
-
 
 /**
  * The placeOrder Interactor.
  */
 
-//The interactor executes use case: placing order
-//Saves order under "Food Order" for guest in guest data
-    // If the order is empty (0,0,0), then prepare fail view
-    // If the order is not empty, prepare success view
 public class PlaceOrderInteractor implements PlaceOrderInputBoundary {
     private final PlaceOrderDataAccessInterface guestData;
     private final PlaceOrderOutputBoundary placeOrderPresenter;
-    private final OrderFactory orderFactory;
 
     public PlaceOrderInteractor(PlaceOrderDataAccessInterface placeOrderDataAccessInterface,
-                                PlaceOrderOutputBoundary placeOrderOutputBoundary,
-                                OrderFactory orderFactory) {
+                                PlaceOrderOutputBoundary placeOrderOutputBoundary) {
         this.guestData = placeOrderDataAccessInterface;
         this.placeOrderPresenter = placeOrderOutputBoundary;
-        this.orderFactory = orderFactory;
     }
 
     @Override

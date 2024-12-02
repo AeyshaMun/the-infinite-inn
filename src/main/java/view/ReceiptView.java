@@ -1,7 +1,7 @@
 package view;
 
-import main.java.interface_adapter.placeOrder.PlaceOrderState;
-import main.java.interface_adapter.receipt.ReceiptViewModel;
+import interface_adapter.placeOrder.PlaceOrderState;
+import interface_adapter.receipt.ReceiptViewModel;
 
 import javax.swing.*;
 import java.awt.*;

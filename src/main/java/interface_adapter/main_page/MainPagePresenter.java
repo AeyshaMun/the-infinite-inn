@@ -1,10 +1,10 @@
 package interface_adapter.main_page;
 
-import main.java.interface_adapter.BookRoom.BookRoomViewModel;
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.interface_adapter.eventdetails.EventDetailsViewModel;
-import main.java.interface_adapter.login.LoginViewModel;
-import main.java.use_case.main_page.MainPageOutputBoundary;
+import interface_adapter.BookRoom.BookRoomViewModel;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.eventdetails.EventDetailsViewModel;
+import interface_adapter.login.LoginViewModel;
+import use_case.main_page.MainPageOutputBoundary;
 
 /**
  * The Presenter for the Main Page Use Case.
