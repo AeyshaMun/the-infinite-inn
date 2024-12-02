@@ -1,8 +1,9 @@
-package main.java.interface_adapter.eventsummary;
+package interface_adapter.eventsummary;
 
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.use_case.eventsummary.EventSummaryOutputBoundary;
-import main.java.use_case.eventsummary.EventSummaryOutputData;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.main_page.MainPageViewModel;
+import use_case.eventsummary.EventSummaryOutputBoundary;
+import use_case.eventsummary.EventSummaryOutputData;
 
 /**
  * The Presenter for the EventSummary Use Case.
@@ -28,7 +29,7 @@ public class EventSummaryPresenter implements EventSummaryOutputBoundary {
 
     @Override
     public void switchToHomeView() {
-        viewManagerModel.setState(homeViewModel.getViewName());
+        viewManagerModel.setState(MainPageViewModel.getViewName());
         viewManagerModel.firePropertyChanged();
     }
 

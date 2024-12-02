@@ -1,6 +1,6 @@
-package main.java.interface_adapter.BookRoom;
+package interface_adapter.BookRoom;
 
-import main.java.interface_adapter.ViewModel;
+import interface_adapter.ViewModel;
 
 /**
  * The ViewModel for the Signup View.

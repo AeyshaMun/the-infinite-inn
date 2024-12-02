@@ -1,11 +1,11 @@
-package main.java.interface_adapter.eventforecast;
+package interface_adapter.eventforecast;
 
-import main.java.entity.EventForecast;
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.interface_adapter.eventsummary.EventSummaryState;
-import main.java.interface_adapter.eventsummary.EventSummaryViewModel;
-import main.java.use_case.eventforecast.EventForecastOutputBoundary;
-import main.java.use_case.eventforecast.EventForecastOutputData;
+import entity.EventForecast;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.eventsummary.EventSummaryState;
+import interface_adapter.eventsummary.EventSummaryViewModel;
+import use_case.eventforecast.EventForecastOutputBoundary;
+import use_case.eventforecast.EventForecastOutputData;
 
 /**
  * The Presenter for the EventForecast Use Case.

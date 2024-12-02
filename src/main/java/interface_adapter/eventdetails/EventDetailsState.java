@@ -1,4 +1,4 @@
-package main.java.interface_adapter.eventdetails;
+package interface_adapter.eventdetails;
 
 /**
  * The state for the Event Details View Model.

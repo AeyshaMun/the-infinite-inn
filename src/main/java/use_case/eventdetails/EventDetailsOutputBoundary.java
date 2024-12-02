@@ -1,4 +1,6 @@
-package main.java.use_case.eventdetails;
+package use_case.eventdetails;
+
+import use_case.eventdetails.EventDetailsOutputData;
 
 /**
  * The output boundary for the Event Details Use Case.

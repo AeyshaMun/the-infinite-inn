@@ -1,8 +1,10 @@
-package main.java.use_case.eventdetails;
+package use_case.eventdetails;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import use_case.eventdetails.EventDetailsUserDataAccessInterface;
+import use_case.eventdetails. EventDetailsOutputBoundary;
 
 /**
  * The Event Details Interactor.

@@ -1,4 +1,4 @@
-package main.java.interface_adapter.eventsummary;
+package interface_adapter.eventsummary;
 
 public class EventSummaryState {
     private String summary = "";

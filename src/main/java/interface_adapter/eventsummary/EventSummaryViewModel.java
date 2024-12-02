@@ -1,6 +1,6 @@
-package main.java.interface_adapter.eventsummary;
+package interface_adapter.eventsummary;
 
-import main.java.interface_adapter.ViewModel;
+import interface_adapter.ViewModel;
 
 /**
  * The ViewModel for the Event Summary View.

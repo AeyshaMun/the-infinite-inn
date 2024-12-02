@@ -1,7 +1,7 @@
-package main.java.interface_adapter.eventsummary;
+package interface_adapter.eventsummary;
 
-import main.java.use_case.eventsummary.EventSummaryInputBoundary;
-import main.java.use_case.eventsummary.EventSummaryInputData;
+import use_case.eventsummary.EventSummaryInputBoundary;
+import use_case.eventsummary.EventSummaryInputData;
 
 /**
  * Controller for the Event Summary Use Case.
