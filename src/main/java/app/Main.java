@@ -33,12 +33,13 @@ public class Main {
                 .addLoginUseCase()
 
                 .addLoggedInUseCase()
-
-                .addBookRoomUseCase()
+                .addEventDetailUseCase()
+                .addEventForecast()
+                .addEventSummary()
                 .addAccommodationUseCase()
                 .addPlaceOrderUseCase()
                 .addCheckoutUseCase()
-                .build();
+                .build();//
 
         application.pack();
         application.setVisible(true);
