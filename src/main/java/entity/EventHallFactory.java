@@ -1,13 +1,16 @@
 package main.java.entity;
 
-public class EventHallFactory {
+public class EventHallFactory implements RoomFactory {
 
-    /**
-     * Creates a new EventHall with the given party size.
-     * @param partySize the size of the party for the event
-     * @return a new EventHall instance
-     */
-    public Room create(int partySize) {
-        return new EventHall(partySize);  // Return as Room type
+    @Override
+    public Room createSuite() {
+        // EventHallFactory is not responsible for creating Suites, but we can throw an exception to indicate misuse.
+        throw new UnsupportedOperationException("EventHallFactory cannot create Suites.");
+    }
+
+    @Override
+    public Room createEventHall(int partySize) {
+        // Create and return a new EventHall with the specified party size
+        return new EventHall(partySize); // Assuming EventHall constructor takes partySize
     }
 }
