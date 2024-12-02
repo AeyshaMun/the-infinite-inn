@@ -12,4 +12,6 @@ public interface CheckoutOutputBoundary {
      * @param failureMessage the explanation of the failure
      */
     void prepareFailView(String failureMessage);
+
+    void switchtoLoggedInView();
 }

@@ -61,9 +61,7 @@ public class CheckoutPresenter implements CheckoutOutputBoundary {
         CheckoutState newState = viewModel.getState();
 
         // 2. Update the state for failure
-        newState.setCheckoutStatus(false);
         newState.setMessage(error);
-        newState.setErrorStatus("FAILURE");  // Make sure 'setErrorStatus' is a valid method
 
         // Set the updated state in the CheckoutViewModel
         viewModel.setState(newState);
@@ -71,6 +69,11 @@ public class CheckoutPresenter implements CheckoutOutputBoundary {
         // Fire PropertyChangeEvent to notify the view of the updated state
         viewModel.firePropertyChanged();
     }
+
+    @Override
+    public void switchtoLoggedInView(){
+        viewManagerModel.setState(loggedInViewViewModel.getViewName());
+        viewManagerModel.firePropertyChanged();
+    }
 }
 
-//have to deal with reds
