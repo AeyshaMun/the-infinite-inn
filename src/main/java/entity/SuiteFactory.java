@@ -2,15 +2,13 @@ package main.java.entity;
 
 public class SuiteFactory implements RoomFactory {
 
-    private String name;
-    private String room_type;
-
-    public SuiteFactory(String name, String room_type) {
-        this.name = name;
-        this.room_type = room_type;
-    }
     @Override
-    public Room create() {
+    public Room createSuite(String name, String room_type) {
         return new Suite(name, room_type);
+    }
+
+    @Override
+    public Room createEventHall(int partySize) {
+        throw new UnsupportedOperationException("SuiteFactory cannot create EventHall.");
     }
 }

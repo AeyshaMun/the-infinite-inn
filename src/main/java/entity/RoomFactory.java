@@ -11,7 +11,7 @@ public interface RoomFactory {
      *
      * @return the created Suite object.
      */
-    Room createSuite();
+    Room createSuite(String name, String room_type);
 
     /**
      * Creates a new EventHall room with the specified party size.
