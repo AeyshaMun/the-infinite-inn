@@ -1,7 +1,7 @@
 package interface_adapter.login;
 
-import main.java.use_case.login.LoginInputBoundary;
-import main.java.use_case.login.LoginInputData;
+import use_case.login.LoginInputBoundary;
+import use_case.login.LoginInputData;
 
 /**
  * The controller for the Login Use Case.

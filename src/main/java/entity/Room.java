@@ -24,3 +24,4 @@ public interface Room {
      */
     double getPrice();
 }
+

@@ -1,10 +1,10 @@
 package interface_adapter.logged_in;
 
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.interface_adapter.accommodations.AccommodationsViewModel;
-import main.java.interface_adapter.checkout.CheckoutViewModel;
-import main.java.interface_adapter.placeOrder.BookRoomViewModel;
-import main.java.use_case.logged_in.LoggedInOutputBoundary;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.accommodations.AccommodationsViewModel;
+import interface_adapter.checkout.CheckoutViewModel;
+import interface_adapter.placeOrder.BookRoomViewModel;
+import use_case.logged_in.LoggedInOutputBoundary;
 
 /**
  * The Presenter for the Logged In Use Case.

@@ -1,11 +1,11 @@
 package interface_adapter.login;
 
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.interface_adapter.logged_in.LoggedInState;
-import main.java.interface_adapter.logged_in.LoggedInViewModel;
-import main.java.interface_adapter.main_page.MainPageViewModel;
-import main.java.use_case.login.LoginOutputBoundary;
-import main.java.use_case.login.LoginOutputData;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.logged_in.LoggedInState;
+import interface_adapter.logged_in.LoggedInViewModel;
+import interface_adapter.main_page.MainPageViewModel;
+import use_case.login.LoginOutputBoundary;
+import use_case.login.LoginOutputData;
 
 /**
  * The Presenter for the Login Use Case.

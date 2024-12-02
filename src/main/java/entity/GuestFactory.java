@@ -1,9 +1,8 @@
-package entity;
+package main.java.entity;
 
 import entity.Person;
 
 public class GuestFactory implements PersonFactory {
-
 
     @Override
     public Person create(String name, String accommodations) {

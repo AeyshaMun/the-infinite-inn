@@ -1,6 +1,6 @@
 package use_case.BookRoom;
 
-public interface BookRoomInputDataBoundary {
+public interface BookRoomInputBoundary {
 
     /**
      * Executes the BookRoom use case.

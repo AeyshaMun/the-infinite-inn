@@ -4,14 +4,23 @@ import entity.Room;
 
 /**
  * Factory for creating rooms.
- * This factory provides a method to create different types of rooms, such as Suites and EventHalls.
+ * This factory provides methods to create different types of rooms, such as Suites and EventHalls.
  */
 public interface RoomFactory {
 
     /**
-     * Creates a new room of the specified type.
+     * Creates a new Suite room.
      *
-     * @return the created room object
+     * @return the created Suite object.
      */
-    Room create();
+    Room createSuite(String name, String room_type);
+
+    /**
+     * Creates a new EventHall room with the specified party size.
+     *
+     * @param partySize the number of attendees for the event hall.
+     * @return the created EventHall object.
+     */
+    Room createEventHall(int partySize);
 }
+
