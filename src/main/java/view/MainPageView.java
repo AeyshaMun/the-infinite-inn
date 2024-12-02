@@ -1,7 +1,7 @@
 package view;
 
-import main.java.interface_adapter.logged_in.LoggedInViewModel;
-import main.java.use_case.logged_in.LoggedInInputBoundary;
+import interface_adapter.logged_in.LoggedInViewModel;
+import use_case.logged_in.LoggedInInputBoundary;
 
 import javax.swing.*;
 import java.awt.*;

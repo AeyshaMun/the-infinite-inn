@@ -1,6 +1,6 @@
 package interface_adapter.main_page;
 
-import main.java.use_case.main_page.MainPageInputBoundary;
+import use_case.main_page.MainPageInputBoundary;
 
 /**
  * Controller for the main page Use Case.
