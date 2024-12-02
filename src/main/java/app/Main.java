@@ -39,7 +39,7 @@ public class Main {
                 .addAccommodationUseCase()
                 .addPlaceOrderUseCase()
                 .addCheckoutUseCase()
-                .build();
+                .build();//
 
         application.pack();
         application.setVisible(true);
