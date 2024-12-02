@@ -1,11 +1,11 @@
 package interface_adapter.placeOrder;
 
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.interface_adapter.logged_in.LoggedInViewModel;
-import main.java.interface_adapter.receipt.ReceiptState;
-import main.java.interface_adapter.receipt.ReceiptViewModel;
-import main.java.use_case.place_order.PlaceOrderOutputBoundary;
-import main.java.use_case.place_order.PlaceOrderOutputData;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.logged_in.LoggedInViewModel;
+import interface_adapter.receipt.ReceiptState;
+import interface_adapter.receipt.ReceiptViewModel;
+import use_case.place_order.PlaceOrderOutputBoundary;
+import use_case.place_order.PlaceOrderOutputData;
 
 /**
  * The Presenter for the PlaceOrder Use Case.
@@ -30,8 +30,8 @@ public class PlaceOrderPresenter implements PlaceOrderOutputBoundary {
     public void prepareSuccessView(PlaceOrderOutputData response) {
         // On success, switch to the receipt view.
         final ReceiptState receiptState = receiptViewModel.getState();
-        receiptState.setOrder(response.getOrder()); //make receipt of the order
-        this.receiptViewModel.setState(receiptState); //set it to show receipt of order
+        receiptState.setOrder(response.getOrder());
+        this.receiptViewModel.setState(receiptState);
         receiptViewModel.firePropertyChanged();
 
         viewManagerModel.setState(receiptViewModel.getViewName());

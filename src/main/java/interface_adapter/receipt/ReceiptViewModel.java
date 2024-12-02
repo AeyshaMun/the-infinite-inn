@@ -1,6 +1,6 @@
 package interface_adapter.receipt;
 
-import main.java.interface_adapter.ViewModel;
+import interface_adapter.ViewModel;
 
 /**
  * The View Model for the Receipt View.

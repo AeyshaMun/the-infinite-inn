@@ -1,8 +1,8 @@
 package view;
 
-import main.java.interface_adapter.placeOrder.PlaceOrderController;
-import main.java.interface_adapter.placeOrder.PlaceOrderState;
-import main.java.interface_adapter.placeOrder.PlaceOrderViewModel;
+import interface_adapter.placeOrder.PlaceOrderController;
+import interface_adapter.placeOrder.PlaceOrderState;
+import interface_adapter.placeOrder.PlaceOrderViewModel;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;

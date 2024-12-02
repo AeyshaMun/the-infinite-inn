@@ -1,6 +1,6 @@
 package interface_adapter.logged_in;
 
-import main.java.use_case.logged_in.LoggedInInputBoundary;
+import use_case.logged_in.LoggedInInputBoundary;
 
 /**
  * Controller for the place order Use Case.
