@@ -6,10 +6,12 @@ import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import interface_adapter.checkout.*;
+import use_case.checkout.CheckoutInputBoundary;
 
 public class CheckoutView extends JPanel implements ActionListener, PropertyChangeListener {
 
     private CheckoutViewModel viewModel;
+    private final CheckoutInputBoundary checkoutController;
 
     // UI Components
     private JButton checkoutButton;
@@ -17,8 +19,9 @@ public class CheckoutView extends JPanel implements ActionListener, PropertyChan
     private JLabel messageLabel;
 
     // Constructor for CheckoutView
-    public CheckoutView(CheckoutViewModel viewModel) {
+    public CheckoutView(CheckoutViewModel viewModel, CheckoutInputBoundary checkoutController) {
         this.viewModel = viewModel;
+        this.checkoutController = checkoutController;
 
         // Initialize UI components
         checkoutButton = new JButton("Checkout");
@@ -51,7 +54,7 @@ public class CheckoutView extends JPanel implements ActionListener, PropertyChan
             viewModel.executeCheckout();
         } else if (e.getSource() == backButton) {
             // Return to the main page when the back button is clicked
-            navigateToMainPage();
+            checkoutController.switchtoLoggedInView();
         }
     }
 
@@ -73,18 +76,6 @@ public class CheckoutView extends JPanel implements ActionListener, PropertyChan
             messageLabel.setText("Error, try again.");
             messageLabel.setForeground(Color.RED);
         }
-    }
-
-    // This method will navigate to the main page (for example, clearing the panel or switching view)
-    private void navigateToMainPage() {
-        // For now, we just print out a message, in a real application you would swap views
-        System.out.println("Returning to the main page...");
-        // Optionally reset the state if necessary
-    }
-
-    // Optionally, you can provide a method to reset the view if needed
-    public void resetView() {
-        messageLabel.setText("");
     }
 }
 

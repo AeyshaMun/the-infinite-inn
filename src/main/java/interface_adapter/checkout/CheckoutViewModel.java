@@ -26,4 +26,3 @@ public class CheckoutViewModel extends ViewModel<CheckoutState> {
     }
 }
 
-//may be deleted

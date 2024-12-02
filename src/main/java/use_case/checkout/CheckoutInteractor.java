@@ -4,10 +4,10 @@ package use_case.checkout;
  * The Checkout Interactor.
  */
 public class CheckoutInteractor implements CheckoutInputBoundary {
-    private CheckoutUserDAI userDataAccessObject;
+    private CheckoutUserDataAccessInterface userDataAccessObject;
     private CheckoutOutputBoundary checkoutPresenter;
 
-    public CheckoutInteractor(CheckoutUserDAI userDataAccessInterface,
+    public CheckoutInteractor(CheckoutUserDataAccessInterface userDataAccessInterface,
                               CheckoutOutputBoundary checkoutOutputBoundary) {
         this.userDataAccessObject = userDataAccessInterface;
         this.checkoutPresenter = checkoutOutputBoundary;
@@ -45,5 +45,10 @@ public class CheckoutInteractor implements CheckoutInputBoundary {
             // Handle unexpected exceptions
             checkoutPresenter.prepareFailView("An error occurred during checkout: " + e.getMessage());
         }
+    }
+
+    @Override
+    public void switchtoLoggedInView() {
+        checkoutPresenter.switchtoLoggedInView();
     }
 }

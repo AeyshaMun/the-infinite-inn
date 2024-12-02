@@ -7,4 +7,6 @@ public interface CheckoutInputBoundary {
      * @param CheckoutInputData the input data
      */
     void execute(CheckoutInputData CheckoutInputData);
+
+    void switchtoLoggedInView();
 }
