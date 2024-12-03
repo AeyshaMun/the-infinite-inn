@@ -1,35 +1,25 @@
 package entity;
 
-public class EventBooking {
-    private final Client client;
+public class EventBooking implements Booking {
     private final EventHall eventHall;
     private final String eventDate;
-    private Boolean isIndoor;
+    private final Boolean isIndoor;
 
-    public EventBooking(Client client, EventHall eventHall, String eventDate) {
-        this.client = client;
+    public EventBooking(EventHall eventHall, String eventDate) {
         this.eventHall = eventHall;
         this.eventDate = eventDate;
         this.isIndoor = true;
     }
 
-    public Client getClient() {
-        return client;
-    }
-
-    public EventHall getEventHall() {
+    public EventHall getLocation() {
         return eventHall;
     }
 
-    public String getEventDate() {
+    public String getDate() {
         return eventDate;
     }
 
     public Boolean isIndoor() {
         return isIndoor;
-    }
-
-    public void setIndoor(Boolean isIndoor) {
-        this.isIndoor = isIndoor;
     }
 }

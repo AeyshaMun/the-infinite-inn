@@ -3,9 +3,6 @@ package use_case.eventdetails;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
-
-import entity.*;
 
 /**
  * The Event Details Interactor.

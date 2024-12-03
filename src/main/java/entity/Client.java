@@ -31,20 +31,20 @@ public class Client implements Person {
 
     @Override
     public double getPrice() {
-        return eventBooking.getEventHall().getPrice();
+        return eventBooking.getLocation().getPrice();
     }
 
     @Override
     public int getRoomNumber() {
-        return eventBooking.getEventHall().getRoomNumber();
+        return eventBooking.getLocation().getRoomNumber();
     }
 
     public String getEventDate() {
-        return eventBooking.getEventDate();
+        return eventBooking.getDate();
     }
 
     public int getPartySize() {
-        return eventBooking.getEventHall().getPartySize();
+        return eventBooking.getLocation().getPartySize();
     }
 
     public Boolean isIndoor() {

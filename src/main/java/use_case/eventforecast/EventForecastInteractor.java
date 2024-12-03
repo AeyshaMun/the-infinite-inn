@@ -3,6 +3,7 @@ package use_case.eventforecast;
 import entity.*;
 import interface_adapter.eventforecast.WeatherService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -30,7 +31,7 @@ public class EventForecastInteractor implements EventForecastInputBoundary {
     }
 
     @Override
-    public void execute(EventForecastInputData eventForecastInputData) {
+    public void execute(EventForecastInputData eventForecastInputData) throws IOException {
         // Fetch the weather forecast for the given event date
         EventForecast eventForecast = weatherService.fetchWeatherForecast(eventForecastInputData.getEventDate());
         boolean isUnsuitableForOutdoor = eventForecast.isUnsuitableForOutdoor();
