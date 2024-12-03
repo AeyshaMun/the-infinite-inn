@@ -1,5 +1,7 @@
 package data_access;
 
+import org.bson.Document;
+
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoException;
@@ -9,16 +11,20 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-
 import entity.Person;
-import org.bson.Document;
 
 public class DBPersonDataAccessObject {
-    /* connect to the database THIS CODE IS FROM MongoDB DOCUMENTATION */
+    /**
+     * Connects to the database.
+     * this code is from MongoDB's documentation.
+     * **/
     static MongoDatabase database;
-
+    static MongoClient mongoClient;
     static {
-        String connectionString = "mongodb+srv://olivia:infiniteinn@infiniteinn.tqufq.mongodb.net/?retryWrites=true&w=majority&appName=infiniteinn";
+        String connectionString =
+                "mongodb+srv://olivia:infiniteinn@infiniteinn.tqufq.mongodb.net/?retryWrites="
+                        +
+                        "true&w=majority&appName=infiniteinn";
 
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
@@ -29,19 +35,23 @@ public class DBPersonDataAccessObject {
                 .serverApi(serverApi)
                 .build();
 
-        try (MongoClient mongoClient = MongoClients.create(settings)) {
-            try {
-                database = mongoClient.getDatabase("admin");
-                database.runCommand(new Document("ping", 1));
-                System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
-            }
-            catch (MongoException e) {
-                e.printStackTrace();
-            }
+        mongoClient = MongoClients.create(settings);
+        try {
+            database = mongoClient.getDatabase("admin");
+            database.runCommand(new Document("ping", 1));
+            System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
+        }
+        catch (MongoException e) {
+            e.printStackTrace();
         }
     }
+    /**
+     * Saves a person to the database.
+     * @param person the person to be saved
+     */
 
-    public static void savePerson(Person person){
+    public static void savePerson(Person person) {
+
         MongoCollection<Document> collection = database.getCollection("guests");
 
         Document document = new Document()
@@ -50,24 +60,26 @@ public class DBPersonDataAccessObject {
 
         collection.insertOne(document);
     }
+
     public static boolean accommodations(Person person) {
-        MongoCollection<Document> collection = database.getCollection("guests");
+        final MongoCollection<Document> collection = database.getCollection("guests");
 
-        Document filter = new Document("name", person.getName());
+        final Document filter = new Document("name", person.getName());
 
-        Document existingGuest = collection.find(filter).first();
+        final Document existingGuest = collection.find(filter).first();
         if (existingGuest != null) {
-            String currentAccommodations = existingGuest.getString("accommodations");
-            String newAccommodations = person.getAccommodations();
-            String updatedAccommodations = currentAccommodations + ", " + newAccommodations;
+            final String currentAccommodations = existingGuest.getString("accommodations");
+            final String newAccommodations = person.getAccommodations();
+            final String updatedAccommodations = currentAccommodations + ", " + newAccommodations;
 
-            Document update = new Document("$set", new Document("accommodations", updatedAccommodations));
+            final Document update = new Document("$set", new Document("accommodations", updatedAccommodations));
 
             try {
                 collection.updateOne(filter, update);
                 return true;
-            } catch (MongoException e) {
-                e.printStackTrace();
+            }
+            catch (MongoException exception) {
+                exception.printStackTrace();
             }
         }
         return false;

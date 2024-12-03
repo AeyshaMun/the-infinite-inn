@@ -3,7 +3,9 @@ package entity;
 import data_access.DBPersonDataAccessObject;
 
 public class Guest implements Person {
-    // note to self: make these protected attributes
+    /**
+     * The name and accommodations of the guest.
+     */
     private final String name;
     private final String accommodations;
 
@@ -18,11 +20,8 @@ public class Guest implements Person {
         return name;
     }
 
-
     public String getAccommodations() {
         return accommodations;
     }
 
 }
-
-

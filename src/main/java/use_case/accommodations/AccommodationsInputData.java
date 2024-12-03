@@ -1,9 +1,12 @@
 package use_case.accommodations;
 
 /**
- * The input data for the Accommodations Use Case
+ * The input data for the Accommodations Use Case.
  */
 public class AccommodationsInputData {
+    /**
+     * The specific comment of the accommodations.
+     */
     private final String name;
     private final String accommodations;
 
@@ -11,9 +14,11 @@ public class AccommodationsInputData {
         this.name = name;
         this.accommodations = accommodations;
     }
+
     public String getName() {
         return name;
     }
+
     public String getAccommodations() {
         return accommodations;
     }

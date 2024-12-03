@@ -4,7 +4,7 @@ import entity.Person;
 import entity.PersonFactory;
 
 /**
- * The Accommodations Interactor
+ * The Accommodations Interactor.
  */
 
 public class AccommodationsInteractor implements AccommodationsInputBoundary {
@@ -26,5 +26,4 @@ public class AccommodationsInteractor implements AccommodationsInputBoundary {
         final AccommodationsOutputData accommodationsOutputData = new AccommodationsOutputData(person.getName());
         accommodationsPresenter.prepareSuccessView(accommodationsOutputData);
     }
-
 }
