@@ -69,15 +69,15 @@ public class AppBuilder {
     private final ViewManager viewManager = new ViewManager(cardPanel, cardLayout, viewManagerModel);
 
     // Data access object
-    private DBPersonDataAccessObject personDataAccessObject = new DBPersonDataAccessObject();
+    private DBPersonDataAccessObject personDataAccessObject;
 
     // Factories
-    private PersonFactory guestFactory = new GuestFactory();
-    private ClientFactoryInterface clientFactory = new ClientFactory();
-    private RoomFactory roomFactory = new SuiteRoomFactory();
-    private EventHallFactoryInterface eventhallFactory= new EventHallFactory();
-    private SuiteFactoryInterface suiteRoomFactory = new SuiteRoomFactory();
-    private EventBookingFactory eventBookingFactory =  new EventBookingFactory();
+    private PersonFactory guestFactory;
+    private ClientFactoryInterface clientFactory;
+    private RoomFactory roomFactory;
+    private EventHallFactoryInterface eventhallFactory;
+    private SuiteFactoryInterface suiteRoomFactory;
+    private EventBookingFactory eventBookingFactory;
 
 
     // Views
@@ -125,29 +125,6 @@ public class AppBuilder {
         cardPanel.setLayout(cardLayout);
     }
 
-    /**
-     * Alternative constructor allowing custom dependency injection
-     */
-    public AppBuilder(
-            DBPersonDataAccessObject personDataAccessObject,
-            PersonFactory guestFactory,
-            ClientFactoryInterface clientFactory,
-            RoomFactory roomFactory,
-            EventHallFactoryInterface eventHallFactory,
-            SuiteFactoryInterface suiteRoomFactory,
-            EventBookingFactory eventBookingFactory
-    ) {
-        this.personDataAccessObject = personDataAccessObject;
-        this.guestFactory = guestFactory;
-        this.clientFactory = clientFactory;
-        this.roomFactory = roomFactory;
-        this.eventhallFactory = eventHallFactory;
-        this.suiteRoomFactory = suiteRoomFactory;
-        this.eventBookingFactory = eventBookingFactory;
-
-        // Set up card layout
-        cardPanel.setLayout(cardLayout);
-    }
 
     /**
      * Initializes views and view models
