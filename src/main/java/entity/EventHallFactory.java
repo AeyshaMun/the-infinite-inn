@@ -1,6 +1,6 @@
 package entity;
 
-public class EventHallFactory implements InterfaceEventHallFactory {
+public class EventHallFactory implements EventHallFactoryInterface {
 
     @Override
     public Room createEventHall(int partySize) {

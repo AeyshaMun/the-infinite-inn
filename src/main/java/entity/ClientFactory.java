@@ -1,12 +1,15 @@
 package entity;
 
-public class ClientFactory {
+import java.util.ArrayList;
+
+public class ClientFactory implements ClientFactoryInterface {
     /**
      * Creates a new Client with the given name.
      * @param name the name of the client
      * @return a new Client instance
      */
-    public Client create(String name) {
-        return new Client(name);
+    @Override
+    public Person createClient(String name, String accommodations, ArrayList<Integer> order, EventBooking eventBooking) {
+        return new Client(name, accommodations, order, eventBooking);
     }
 }

@@ -45,10 +45,8 @@ guest.
 - As a potential guest, I want to be able to make a booking at the inn so that I can secure a place 
 to stay during my trip according to my preferences.
 #### Emily:
-- As a guest, I want to be able to remotely check out of my room once my stay is over so that I can 
-leave on my own time, hassle-free.
-- As a client, I want to be able to remotely check out of my event hall once my event is over so 
-that I can leave on my own time, hassle-free.
+- As a guest or a client, once my trip or event is over, I want to check out of my room or the 
+event hall on my phone remotely so that I can leave on my own time.
 #### Noga:
 - As a guest, I want to order room service so that I can get food delivered without having to leave 
 my room.
@@ -168,7 +166,7 @@ to run the project.
 This work is dedicated to the public domain under the
 [Creative Commons CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 You can copy, modify, distribute, and perform the work, even for commercial purposes, all without 
-asking permission. For more details, see the [LICENSE]() file.
+asking permission. For more details, see the [LICENSE](LICENSE) file.
 
 ### Feedback
 We value any feedback you may have about this project! If you have suggestions, comments, or 
