@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity;
 
 public class Client implements Person {
     private final String name;

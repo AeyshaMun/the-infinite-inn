@@ -1,6 +1,4 @@
-package entity;
-
-import entity.Room;
+package main.java.entity;
 
 /**
  * Factory for creating rooms.
