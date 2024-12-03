@@ -15,6 +15,11 @@ public class BookRoomViewModel extends ViewModel<BookRoomState> {
     public static final String FAMILY_ROOM_LABEL = "Family Room";
     public static final String ACCESSIBLE_ROOM_LABEL = "Accessible Room";
 
+    public static final String SINGLE_ROOM = "A cozy room for one person.";
+    public static final String DOUBLE_ROOM = "A comfortable room for two people.";
+    public static final String FAMILY_ROOM = "A luxurious suite for a family.";
+    public static final String ACCESSIBLE_ROOM = "An accessible room with barrier-free design and adaptive features.";
+
     public static final String SUBMIT_BUTTON_LABEL = "Book Room";
     public BookRoomViewModel() {
         super("Book Room");

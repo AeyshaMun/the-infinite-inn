@@ -31,11 +31,9 @@ public class ConfirmationState {
 
     @Override
     public String toString() {
-        return "ConfirmationState{"
-                + "room_num='" + room_num + '\''
-                + ", room_type='" + room_type + '\''
-                + ", price='" + price + '\''
-                + '}';
+        return "room_num ='" + room_num + '\''
+                + ", room_type ='" + room_type + '\''
+                + ", price ='" + price + '\'';
     }
 }
 
