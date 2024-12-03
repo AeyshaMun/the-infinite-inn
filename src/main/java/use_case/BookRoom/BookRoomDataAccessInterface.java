@@ -6,9 +6,5 @@ import main.java.entity.Room;
  */
 public class BookRoomDataAccessInterface {
 
-    /**
-     * Saves the guest.
-     * @param room the user to save
-     */
-//    void save(Room room);
+    void save(Room suite);
 }

@@ -1,6 +1,4 @@
-package entity;
-
-import entity.Person;
+package main.java.entity;
 
 /**
  * Factory for creating users.

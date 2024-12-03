@@ -1,7 +1,7 @@
 package interface_adapter.placeOrder;
 
-import main.java.use_case.place_order.PlaceOrderInputBoundary;
-import main.java.use_case.place_order.PlaceOrderInputData;
+import use_case.place_order.PlaceOrderInputBoundary;
+import use_case.place_order.PlaceOrderInputData;
 
 import java.util.ArrayList;
 import java.util.Arrays;

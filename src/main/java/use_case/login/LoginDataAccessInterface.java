@@ -1,6 +1,6 @@
 package use_case.login;
 
-import main.java.entity.Guest;
+import entity.Guest;
 
 /**
  * DAO for the Login Use Case.

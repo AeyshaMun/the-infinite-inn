@@ -1,4 +1,4 @@
-package main.java.use_case.eventsummary;
+package use_case.eventsummary;
 
 public class EventSummaryInputData {
     private final String name;

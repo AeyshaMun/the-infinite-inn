@@ -1,4 +1,4 @@
-package main.java.interface_adapter.BookRoom;
+package interface_adapter.BookRoom;
 
 /**
  * The state for the BookRoom View Model.
@@ -46,11 +46,9 @@ public class BookRoomState {
 
     @Override
     public String toString() {
-        return "SignupState{"
+        return "BookroomState{"
                 + "name='" + name + '\''
-                + ", room_num='" + room_num + '\''
                 + ", room_type='" + room_type + '\''
-                + ", price='" + price + '\''
                 + '}';
     }
 }

@@ -1,4 +1,4 @@
-package main.java.use_case.eventsummary;
+package use_case.eventsummary;
 
 /**
  * The output boundary for the Event Summary Use Case.

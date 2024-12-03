@@ -1,16 +1,16 @@
-package main.java.interface_adapter.BookRoom;
+package interface_adapter.BookRoom;
 
-import main.java.use_case.BookRoom.BookRoomInputDataBoundary;
-import main.java.use_case.BookRoom.BookRoomInputData;
+import use_case.BookRoom.BookRoomInputBoundary;
+import use_case.BookRoom.BookRoomInputData;
 
 /**
- * Controller for the Signup Use Case.
+ * Controller for the BookRoom Use Case.
  */
 public class BookRoomController {
 
-    private final BookRoomInputDataBoundary bookroomUseCaseInteractor;
+    private final BookRoomInputBoundary bookroomUseCaseInteractor;
 
-    public BookRoomController(BookRoomInputDataBoundary bookroomUseCaseInteractor) {
+    public BookRoomController(BookRoomInputBoundary bookroomUseCaseInteractor) {
         this.bookroomUseCaseInteractor = bookroomUseCaseInteractor;
     }
 

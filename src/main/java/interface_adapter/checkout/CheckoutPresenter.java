@@ -1,8 +1,12 @@
-package interface_adapter.checkout;
+package main.java.interface_adapter.checkout;
 
-import main.java.interface_adapter.ViewManagerModel;
-import main.java.interface_adapter.ViewModel;
+import interface_adapter.ViewManagerModel;
+import interface_adapter.ViewModel;
 
+import interface_adapter.logged_in.LoggedInState;
+import interface_adapter.logged_in.LoggedInViewModel;
+import interface_adapter.login.LoginState;
+import interface_adapter.login.LoginViewModel;
 import use_case.checkout.CheckoutOutputBoundary;
 import use_case.checkout.CheckoutOutputData;
 
@@ -41,7 +45,7 @@ public class CheckoutPresenter implements CheckoutOutputBoundary {
         // 5. Get the LoginState and clear it as well
         final LoginState loginState = loginViewModel.getState();
         loginState.setName("");  // Clear the login information
-        loginState.setRoomNumber("");  // Clear the room number
+        loginState.setRoomNumber(0);  // Clear the room number
 
         // 6. Set the updated state in the LoginViewModel
         loginViewModel.setState(loginState);
@@ -61,9 +65,7 @@ public class CheckoutPresenter implements CheckoutOutputBoundary {
         CheckoutState newState = viewModel.getState();
 
         // 2. Update the state for failure
-        newState.setCheckoutStatus(false);
         newState.setMessage(error);
-        newState.setErrorStatus("FAILURE");  // Make sure 'setErrorStatus' is a valid method
 
         // Set the updated state in the CheckoutViewModel
         viewModel.setState(newState);
@@ -71,6 +73,11 @@ public class CheckoutPresenter implements CheckoutOutputBoundary {
         // Fire PropertyChangeEvent to notify the view of the updated state
         viewModel.firePropertyChanged();
     }
+
+    @Override
+    public void switchtoLoggedInView(){
+        viewManagerModel.setState(loggedInViewModel.getViewName());
+        viewManagerModel.firePropertyChanged();
+    }
 }
 
-//have to deal with reds

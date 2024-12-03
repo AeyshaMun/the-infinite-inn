@@ -1,4 +1,6 @@
-package main.java.use_case.eventdetails;
+package use_case.eventdetails;
+
+import use_case.eventdetails.EventDetailsInputData;
 
 public interface EventDetailsInputBoundary {
     /**

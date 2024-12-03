@@ -1,4 +1,4 @@
-package main.java.use_case.BookRoom;
+package use_case.BookRoom;
 
 /**
  * The Input Data for the BookRoom Use Case.
@@ -17,7 +17,7 @@ public class BookRoomInputData {
         return name;
     }
 
-    String getRoom_type() {
+    String getRoomType() {
         return room_type;
     }
 

@@ -1,6 +1,7 @@
-package main.java.use_case.eventforecast;
+package use_case.eventforecast;
 
-import main.java.entity.EventForecast;
+import entity.EventForecast;
+import use_case.eventforecast.EventForecastOutputData;
 
 /**
  * The output boundary for the Event Forecast Use Case.

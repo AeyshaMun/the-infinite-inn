@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity;
 
 /**
  * The representation of a person in our program.

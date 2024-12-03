@@ -1,4 +1,4 @@
-package main.java.use_case.eventforecast;
+package use_case.eventforecast;
 
 public class EventForecastInputData {
     private String name;
