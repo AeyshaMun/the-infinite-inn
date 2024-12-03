@@ -1,6 +1,6 @@
 package entity;
 
-public class SuiteFactory implements InterfaceSuiteFactory {
+public class SuiteRoomFactory implements InterfaceSuiteFactory {
 
     @Override
     public Room createSuite(String name, String room_type) {
