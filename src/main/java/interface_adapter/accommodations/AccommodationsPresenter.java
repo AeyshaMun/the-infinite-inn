@@ -4,6 +4,9 @@ import use_case.accommodations.AccommodationsOutputBoundary;
 import use_case.accommodations.AccommodationsOutputData;
 
 public class AccommodationsPresenter implements AccommodationsOutputBoundary {
+    /**
+     * The Accommodations Presenter
+     */
 
     private final AccommodationsViewModel accommodationsViewModel;
 

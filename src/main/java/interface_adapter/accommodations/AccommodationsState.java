@@ -1,6 +1,10 @@
 package interface_adapter.accommodations;
 
 public class AccommodationsState {
+    /**
+     * The Accommodations State
+     */
+
     private boolean isAccommodationsSaved;
 
     public boolean isAccommodationsSaved() {

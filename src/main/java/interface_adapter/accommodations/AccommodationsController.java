@@ -3,7 +3,6 @@ package interface_adapter.accommodations;
 import use_case.accommodations.AccommodationsInputBoundary;
 import use_case.accommodations.AccommodationsInputData;
 
-
 public class AccommodationsController {
     private final AccommodationsInputBoundary personAccommodationsUseCaseInteractor;
 
