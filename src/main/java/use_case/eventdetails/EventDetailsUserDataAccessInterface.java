@@ -1,5 +1,7 @@
 package use_case.eventdetails;
 
+import entity.Person;
+
 /**
  * DAO for the Event Details Use Case.
  */

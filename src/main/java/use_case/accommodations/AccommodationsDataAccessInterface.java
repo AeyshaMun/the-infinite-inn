@@ -5,9 +5,10 @@ import entity.Person;
 public  interface AccommodationsDataAccessInterface {
     /**
      * Updates the system to record this person's accommodations.
-     * @param person the person whose accommodations is to be updated
+     * @param name the name of the person whose accommodations is to be updated
      */
 
-    void accommodations(Person person);
+    boolean accommodationsByName(String name, String accommodations);
 
+    boolean existsByName(String name);
 }
