@@ -16,11 +16,9 @@ public class BookRoomPresenter implements BookRoomOutputBoundary {
 
     @Override
     public void prepareSuccessView(BookRoomOutputData response) {
-        // On success, switch to the login view.
-//        final LoginState loginState = loginViewModel.getState();
-//        loginState.setUsername(response.getUsername());
-//        this.loginViewModel.setState(loginState);
-//        loginViewModel.firePropertyChanged();
+        response.getRoomNum();
+        response.getRoomType();
+        response.getPrice();
 
     }
 

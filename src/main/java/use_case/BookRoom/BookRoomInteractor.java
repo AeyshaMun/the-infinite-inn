@@ -1,8 +1,8 @@
-package use_case.BookRoom;
+package main.java.use_case.BookRoom;
 
-import entity.RoomFactory;
-import entity.SuiteFactory;
-
+import main.java.entity.Room;
+import main.java.entity.SuiteFactory;
+import main.java.entity.RoomFactory;
 
 public class BookRoomInteractor implements BookRoomInputBoundary {
     private final BookRoomDataAccessInterface suiteDataAccessObject;
@@ -19,14 +19,10 @@ public class BookRoomInteractor implements BookRoomInputBoundary {
 
     @Override
     public void execute(BookRoomInputData bookroomInputData) {
-        final SuiteFactory suite = new SuiteFactory(bookroomInputData.getName(), bookroomInputData.getRoomType());
-        suite.create();
+        final Room suite = suiteFactory.createSuite(bookroomInputData.getName(), bookroomInputData.getRoomType());
         suiteDataAccessObject.save(suite);
 
-        final SignupOutputData signupOutputData = new SignupOutputData(room.getName(), false);
-        userPresenter.prepareSuccessView(signupOutputData);
-
-
+        final BookRoomOutputData bookRoomOutputData = new BookRoomOutputData(suite.getRoomNumber(), suite.getRoomType(), suite.getPrice());
+        suitePresenter.prepareSuccessView(bookRoomOutputData);
     }
-
 }

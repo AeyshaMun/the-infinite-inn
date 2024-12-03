@@ -16,10 +16,8 @@ public class BookRoomViewModel extends ViewModel<BookRoomState> {
     public static final String ACCESSIBLE_ROOM_LABEL = "Accessible Room";
 
     public static final String SUBMIT_BUTTON_LABEL = "Book Room";
-    public static final String INFORMATION_MESSAGE = "Congratulations! You have made your booking.";
     public BookRoomViewModel() {
         super("Book Room");
         setState(new BookRoomState());
     }
-
 }

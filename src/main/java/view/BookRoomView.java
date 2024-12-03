@@ -52,7 +52,7 @@ public class BookRoomView extends JPanel implements ActionListener {
 
         JPanel singleRoomPanel = createRoomOption( "images/single_room.jpg", "A cozy room for one person.", singleRoomButton);
         JPanel doubleRoomPanel = createRoomOption( "images/double_room.jpg", "A comfortable room for two people.", doubleRoomButton);
-        JPanel suiteRoomPanel = createRoomOption("images/suite_room.jpg", "A luxurious suite with extra amenities.", familyRoomButton);
+        JPanel suiteRoomPanel = createRoomOption("images/suite_room.jpg", "A luxurious suite for a family.", familyRoomButton);
         JPanel deluxeRoomPanel = createRoomOption("images/deluxe_room.jpg", "A deluxe room with premium features.", accessibleRoomButton);
 
         JPanel roomSelectionPanel = new JPanel();
