@@ -1,6 +1,6 @@
-package main.java.entity;
+package entity;
 
-public interface InterfaceSuiteFactory extends RoomFactory {
+public interface SuiteFactoryInterface extends RoomFactory {
     /**
      * Creates a new Suite room.
      *

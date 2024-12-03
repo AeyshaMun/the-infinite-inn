@@ -1,6 +1,6 @@
-package main.java.entity;
+package entity;
 
-public interface InterfaceEventHallFactory extends RoomFactory {
+public interface EventHallFactoryInterface extends RoomFactory {
     /**
      * Creates a new EventHall room with the specified party size.
      *
