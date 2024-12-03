@@ -1,6 +1,6 @@
 package main.java.entity;
 
-public class EventForecast {
+public class EventForecast implements Forecast {
     private final String description;
     private final double temperature;
     private final double precipitation;

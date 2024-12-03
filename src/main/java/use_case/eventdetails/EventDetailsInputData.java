@@ -1,4 +1,4 @@
-package main.java.use_case.eventdetails;
+package use_case.eventdetails;
 
 /**
  * The Input Data for the Event Details Use Case.
@@ -15,7 +15,7 @@ public class EventDetailsInputData {
         this.partySize = partySize;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 

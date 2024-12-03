@@ -9,6 +9,8 @@ public class BookRoomState {
     private String room_num;
     private String room_type;
     private String price;
+    private String nameError;
+    private String roomError;
 
     // getter methods
     public String getName() {
@@ -25,6 +27,12 @@ public class BookRoomState {
 
     public String getPrice() {
         return price;
+    }
+
+    public String getNameError() {return nameError;}
+
+    public String getRoomError() {
+        return roomError;
     }
 
     // setter methods
@@ -44,13 +52,19 @@ public class BookRoomState {
         this.price = price;
     }
 
+    public void setNameError(String nameError) {
+        this.nameError = nameError;
+    }
+
+    public void setRoomError(String roomError) {
+        this.roomError = roomError;
+    }
+
     @Override
     public String toString() {
         return "BookroomState{"
                 + "name='" + name + '\''
-                + ", room_num='" + room_num + '\''
                 + ", room_type='" + room_type + '\''
-                + ", price='" + price + '\''
                 + '}';
     }
 }

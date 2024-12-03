@@ -1,4 +1,4 @@
-package main.java.interface_adapter.eventdetails;
+package interface_adapter.eventdetails;
 
 import main.java.interface_adapter.ViewModel;
 

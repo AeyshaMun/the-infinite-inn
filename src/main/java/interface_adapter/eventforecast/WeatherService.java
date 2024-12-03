@@ -1,14 +1,21 @@
-package main.java.interface_adapter.eventforecast;
+package interface_adapter.eventforecast;
 
-import main.java.entity.EventForecast;
+import entity.EventForecast;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class WeatherService {
-    private final String apiKey;
-    private final String apiBaseUrl;
+    private final String apiKey = "AZ4DTYK2XT69WPVYUZGZWWY4X";
+    private final String apiBaseUrl = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
+    ;
 
-    public WeatherService(String apiKey, String apiBaseUrl) {
-        this.apiKey = apiKey;
-        this.apiBaseUrl = apiBaseUrl;
+    public WeatherService() {
     }
 
     public EventForecast fetchWeatherForecast(String date) throws IOException {

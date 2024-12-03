@@ -4,7 +4,7 @@ import main.java.use_case.BookRoom.BookRoomInputBoundary;
 import main.java.use_case.BookRoom.BookRoomInputData;
 
 /**
- * Controller for the Signup Use Case.
+ * Controller for the BookRoom Use Case.
  */
 public class BookRoomController {
 
@@ -19,5 +19,9 @@ public class BookRoomController {
                 name, room_type);
 
         bookroomUseCaseInteractor.execute(bookroomInputData);
+    }
+
+    public void switchToConfirmationView() {
+        bookroomUseCaseInteractor.switchToConfirmationView();
     }
 }

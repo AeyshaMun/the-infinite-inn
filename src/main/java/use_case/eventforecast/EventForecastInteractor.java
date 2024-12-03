@@ -1,7 +1,10 @@
-package main.java.use_case.eventforecast;
+package use_case.eventforecast;
 
-import main.java.entity.*;
-import main.java.interface_adapter.eventforecast.WeatherService;
+import entity.*;
+import interface_adapter.eventforecast.WeatherService;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * The Event Forecast Interactor.
@@ -9,16 +12,16 @@ import main.java.interface_adapter.eventforecast.WeatherService;
 public class EventForecastInteractor implements EventForecastInputBoundary {
     private final EventForecastUserDataAccessInterface eventBookingDataAccessObject;
     private final EventForecastOutputBoundary eventBookingPresenter;
-    private final ClientFactory clientFactory;
-    private final EventHallFactory eventHallFactory;
-    private final EventBookingFactory eventBookingFactory;
+    private final ClientFactoryInterface clientFactory;
+    private final EventHallFactoryInterface eventHallFactory;
+    private final EventBookingFactoryInterface eventBookingFactory;
     private final WeatherService weatherService; // Add weather service dependency
 
 
     public EventForecastInteractor(EventForecastUserDataAccessInterface eventForecastDataAccessInterface,
                                    EventForecastOutputBoundary eventForecastOutputBoundary,
-                                   ClientFactory clientFactory, EventHallFactory eventHallFactory,
-                                   EventBookingFactory eventBookingFactory, WeatherService weatherService) {
+                                   ClientFactoryInterface clientFactory, EventHallFactoryInterface eventHallFactory,
+                                   EventBookingFactoryInterface eventBookingFactory, WeatherService weatherService) {
         this.eventBookingDataAccessObject = eventForecastDataAccessInterface;
         this.eventBookingPresenter = eventForecastOutputBoundary;
         this.clientFactory = clientFactory;
@@ -28,7 +31,7 @@ public class EventForecastInteractor implements EventForecastInputBoundary {
     }
 
     @Override
-    public void execute(EventForecastInputData eventForecastInputData) {
+    public void execute(EventForecastInputData eventForecastInputData) throws IOException {
         // Fetch the weather forecast for the given event date
         EventForecast eventForecast = weatherService.fetchWeatherForecast(eventForecastInputData.getEventDate());
         boolean isUnsuitableForOutdoor = eventForecast.isUnsuitableForOutdoor();
@@ -37,14 +40,19 @@ public class EventForecastInteractor implements EventForecastInputBoundary {
         if (eventForecastInputData.isIndoor() == null) {
             eventBookingPresenter.prepareFailView("Please make a selection.");
         }
-        final Client client = clientFactory.create(eventForecastInputData.getName());
-        final EventHall eventHall = (EventHall) eventHallFactory.create(eventForecastInputData.getPartySize());
-        final EventBooking eventBooking = eventBookingFactory.create(client, eventHall, eventForecastInputData.getEventDate());
+        final Room eventHall = eventHallFactory.createEventHall(eventForecastInputData.getPartySize());
+        final Booking booking = eventBookingFactory.createEventBooking(eventHall, eventForecastInputData.getEventDate());
 
-        eventBookingDataAccessObject.save(eventBooking);
+        if (booking instanceof EventBooking) {
+            EventBooking eventBooking = (EventBooking) booking;
+            ArrayList<Integer> order = new ArrayList<>();
+            final Person client = clientFactory.createClient(eventForecastInputData.getName(), "", order, eventBooking);
 
-        final EventForecastOutputData eventForecastOutputData = new EventForecastOutputData(eventForecastInputData.getName(), eventForecastInputData.getEventDate(), eventForecastInputData.getPartySize(), eventForecastInputData.isIndoor(), eventBooking.getEventHall().getRoomNumber(), eventBooking.getEventHall().getPrice(), false);
-        eventBookingPresenter.prepareSuccessView(eventForecastOutputData);
+            eventBookingDataAccessObject.savePerson(client);
+
+            final EventForecastOutputData eventForecastOutputData = new EventForecastOutputData(eventForecastInputData.getName(), eventForecastInputData.getEventDate(), eventForecastInputData.getPartySize(), eventForecastInputData.isIndoor(), eventBooking.getLocation().getRoomNumber(), eventBooking.getLocation().getPrice(), false);
+            eventBookingPresenter.prepareSuccessView(eventForecastOutputData);
+        }
     }
 
     @Override

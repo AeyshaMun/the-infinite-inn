@@ -7,4 +7,9 @@ public interface BookRoomInputBoundary {
      * @param bookroomInputData the input data
      */
     void execute(BookRoomInputData bookroomInputData);
+
+    /**
+     * Executes the switch to confirmation view use case.
+     */
+    void switchToConfirmationView();
 }

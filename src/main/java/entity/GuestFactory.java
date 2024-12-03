@@ -1,12 +1,11 @@
 package main.java.entity;
 
-/**
- * The Guest Factory, which creates a Guest object.
- */
-public class GuestFactory implements PersonFactory {
+import java.util.ArrayList;
+
+public class GuestFactory implements GuestFactoryInterface {
 
     @Override
-    public Person create(String name, String accommodations) {
-        return new Guest(name, accommodations);
-    }
+    public Person createGuest(String name, String accommodations, ArrayList<Integer> order, SuiteRoom suiteRoom) {
+            return new Guest(name, accommodations, order, suiteRoom);
+        }
 }

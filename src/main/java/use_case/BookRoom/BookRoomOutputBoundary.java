@@ -10,4 +10,15 @@ public interface BookRoomOutputBoundary {
      * @param outputData the output data
      */
     void prepareSuccessView(BookRoomOutputData outputData);
+
+    /**
+     * Prepares the failure view for the BookRoom Use Case.
+     * @param errorMessage the explanation of the failure
+     */
+    void prepareFailView(String errorMessage);
+
+    /**
+     * Executes the switch to confirmation view use case.
+     */
+    void switchToConfirmationView();
 }

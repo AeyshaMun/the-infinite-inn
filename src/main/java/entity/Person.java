@@ -1,4 +1,6 @@
-package entity;
+package main.java.entity;
+
+import java.util.ArrayList;
 
 /**
  * The representation of a person in our program.
@@ -12,4 +14,10 @@ public interface Person {
     String getName();
 
     String getAccommodations();
+
+    ArrayList<Integer> getOrder();
+
+    double getPrice();
+
+    int getRoomNumber();
 }

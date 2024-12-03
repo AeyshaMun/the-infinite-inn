@@ -2,17 +2,19 @@ package main.java.use_case.BookRoom;
 
 public class BookRoomOutputData {
 
-    private final String room_num;
+    private final int room_num;
     private final String room_type;
-    private final String price;
+    private final double price;
+    private final boolean useCaseFailed;
 
-    public BookRoomOutputData(String room_num, String room_type, String price) {
+    public BookRoomOutputData(int room_num, String room_type, double price, boolean useCaseFailed) {
         this.room_num = room_num;
         this.room_type = room_type;
         this.price = price;
+        this.useCaseFailed = useCaseFailed;
     }
 
-    public String getRoomNum() {
+    public int getRoomNum() {
         return room_num;
     }
 
@@ -20,7 +22,11 @@ public class BookRoomOutputData {
         return room_type;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
+    }
+
+    public boolean isUseCaseFailed() {
+        return useCaseFailed;
     }
 }

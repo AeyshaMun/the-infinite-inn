@@ -1,6 +1,6 @@
 package interface_adapter.checkout;
 
-import main.java.interface_adapter.ViewModel;
+import interface_adapter.ViewModel;
 
 /**
  * The ViewModel for the Checkout View.
