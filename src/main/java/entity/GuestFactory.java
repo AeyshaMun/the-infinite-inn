@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity;
 
 /**
  * The Guest Factory, which creates a Guest object.

@@ -46,7 +46,7 @@ public class BookRoomState {
 
     @Override
     public String toString() {
-        return "SignupState{"
+        return "BookroomState{"
                 + "name='" + name + '\''
                 + ", room_num='" + room_num + '\''
                 + ", room_type='" + room_type + '\''
