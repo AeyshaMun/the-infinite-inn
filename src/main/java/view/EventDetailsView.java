@@ -1,8 +1,9 @@
-package main.java.view;
+package view;
 
 import interface_adapter.eventdetails.EventDetailsController;
 import interface_adapter.eventdetails.EventDetailsState;
 import interface_adapter.eventdetails.EventDetailsViewModel;
+
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
