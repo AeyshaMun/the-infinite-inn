@@ -5,7 +5,9 @@ import data_access.DBPersonDataAccessObject;
 import java.util.ArrayList;
 
 public class Guest implements Person {
-    // note to self: make these protected attributes
+    /**
+     * The name and accommodations of the guest.
+     */
     private final String name;
     private final String accommodations;
     private final ArrayList<Integer> order;
@@ -23,7 +25,6 @@ public class Guest implements Person {
     public String getName() {
         return name;
     }
-
 
     public String getAccommodations() {
         return accommodations;
@@ -48,5 +49,3 @@ public class Guest implements Person {
         return suiteRoom.getRoomType();
     }
 }
-
-

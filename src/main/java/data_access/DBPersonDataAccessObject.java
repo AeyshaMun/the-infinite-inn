@@ -1,5 +1,7 @@
 package data_access;
 
+import org.bson.Document;
+
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoException;
@@ -23,11 +25,18 @@ import use_case.place_order.PlaceOrderDataAccessInterface;
 import java.util.ArrayList;
 
 public class DBPersonDataAccessObject implements AccommodationsDataAccessInterface, BookRoomDataAccessInterface, CheckoutUserDataAccessInterface, EventDetailsUserDataAccessInterface, EventForecastUserDataAccessInterface, PlaceOrderDataAccessInterface, LoginDataAccessInterface {
-    /* connect to the database THIS CODE IS FROM MongoDB DOCUMENTATION */
-    static MongoDatabase database;
+    /**
+     * Connects to the database.
+     * this code is from MongoDB's documentation.
+     * **/
 
+    static MongoDatabase database;
+    static MongoClient mongoClient;
     static {
-        String connectionString = "mongodb+srv://olivia:infiniteinn@infiniteinn.tqufq.mongodb.net/?retryWrites=true&w=majority&appName=infiniteinn";
+        String connectionString =
+                "mongodb+srv://olivia:infiniteinn@infiniteinn.tqufq.mongodb.net/?retryWrites="
+                        +
+                        "true&w=majority&appName=infiniteinn";
 
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
@@ -38,17 +47,22 @@ public class DBPersonDataAccessObject implements AccommodationsDataAccessInterfa
                 .serverApi(serverApi)
                 .build();
 
-        try (MongoClient mongoClient = MongoClients.create(settings)) {
-            try {
-                database = mongoClient.getDatabase("admin");
-                database.runCommand(new Document("ping", 1));
-                System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
-            }
-            catch (MongoException e) {
-                e.printStackTrace();
-            }
+        mongoClient = MongoClients.create(settings);
+        try {
+            database = mongoClient.getDatabase("admin");
+            database.runCommand(new Document("ping", 1));
+            System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
+        }
+        catch (MongoException e) {
+            e.printStackTrace();
         }
     }
+    /**
+     * Saves a person to the database.
+     * @param person the person to be saved
+     */
+
+    public static void savePerson(Person person) {
 
     @Override
     public boolean existsByName(String name) {
@@ -152,19 +166,20 @@ public class DBPersonDataAccessObject implements AccommodationsDataAccessInterfa
 
         Document filter = new Document("name", name);
 
-        Document existingGuest = collection.find(filter).first();
+        final Document existingGuest = collection.find(filter).first();
         if (existingGuest != null) {
             String currentAccommodations = existingGuest.getString("accommodations");
             String newAccommodations = accommodations;
             String updatedAccommodations = currentAccommodations + ", " + newAccommodations;
 
-            Document update = new Document("$set", new Document("accommodations", updatedAccommodations));
+            final Document update = new Document("$set", new Document("accommodations", updatedAccommodations));
 
             try {
                 collection.updateOne(filter, update);
                 return true;
-            } catch (MongoException e) {
-                e.printStackTrace();
+            }
+            catch (MongoException exception) {
+                exception.printStackTrace();
             }
         }
         return false;

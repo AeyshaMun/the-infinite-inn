@@ -4,7 +4,7 @@ import entity.ClientFactoryInterface;
 import entity.GuestFactoryInterface;
 
 /**
- * The Accommodations Interactor
+ * The Accommodations Interactor.
  */
 
 public class AccommodationsInteractor implements AccommodationsInputBoundary {
@@ -28,7 +28,4 @@ public class AccommodationsInteractor implements AccommodationsInputBoundary {
         final AccommodationsOutputData accommodationsOutputData = new AccommodationsOutputData(accommodationsInputData.getName());
         accommodationsPresenter.prepareSuccessView(accommodationsOutputData);
     }
-
-
-
 }
