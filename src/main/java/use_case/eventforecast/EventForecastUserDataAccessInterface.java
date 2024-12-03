@@ -1,6 +1,6 @@
 package use_case.eventforecast;
 
-import entity.EventBooking;
+import entity.Person;
 
 /**
  * DAO for the Event Details Use Case.
@@ -8,7 +8,7 @@ import entity.EventBooking;
 public interface EventForecastUserDataAccessInterface {
     /**
      * Saves the user.
-     * @param eventBooking the user to save
+     * @param person the user to save
      */
-    void save(EventBooking eventBooking);
+    void savePerson(Person person);
 }

@@ -41,7 +41,7 @@ public class LoginInteractor implements LoginInputBoundary {
         }
 
         // Set current guest and prepare success view
-        guestDataAccessObject.setCurrentGuest(name);
+        guestDataAccessObject.setCurrentGuest(name); // i don't think we need this? cause we're just checking if they exist and letting them in
         final LoginOutputData loginOutputData = new LoginOutputData(name, false);
         loginPresenter.prepareSuccessView(loginOutputData);
     }
