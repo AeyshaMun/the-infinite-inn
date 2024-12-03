@@ -1,11 +1,11 @@
-package main.java.interface_adapter.BookRoomConfirm;
+package main.java.interface_adapter.Confirmation;
 
-public class BookRoomConfirmState {
-    private String room_num;
+public class ConfirmationState {
+    private int room_num;
     private String room_type;
-    private String price;
+    private double price;
 
-    public String getRoomNum() {
+    public int getRoomNum() {
         return room_num;
     }
 
@@ -13,11 +13,11 @@ public class BookRoomConfirmState {
         return room_type;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setRoomNum(String room_num) {
+    public void setRoomNum(int room_num) {
         this.room_num = room_num;
     }
 
@@ -25,7 +25,7 @@ public class BookRoomConfirmState {
         this.room_type = room_type;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

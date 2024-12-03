@@ -1,7 +1,7 @@
-package interface_adapter.BookRoom;
+package main.java.interface_adapter.BookRoom;
 
-import use_case.BookRoom.BookRoomInputBoundary;
-import use_case.BookRoom.BookRoomInputData;
+import main.java.use_case.BookRoom.BookRoomInputBoundary;
+import main.java.use_case.BookRoom.BookRoomInputData;
 
 /**
  * Controller for the BookRoom Use Case.
@@ -19,5 +19,9 @@ public class BookRoomController {
                 name, room_type);
 
         bookroomUseCaseInteractor.execute(bookroomInputData);
+    }
+
+    public void switchToConfirmationView() {
+        bookroomUseCaseInteractor.switchToConfirmationView();
     }
 }
