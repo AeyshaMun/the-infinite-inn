@@ -1,4 +1,4 @@
-package use_case.BookRoom;
+package main.java.use_case.BookRoom;
 
 /**
  * The Input Data for the BookRoom Use Case.
