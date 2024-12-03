@@ -3,8 +3,6 @@ package use_case.eventdetails;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import use_case.eventdetails.EventDetailsUserDataAccessInterface;
-import use_case.eventdetails. EventDetailsOutputBoundary;
 
 /**
  * The Event Details Interactor.
@@ -12,18 +10,11 @@ import use_case.eventdetails. EventDetailsOutputBoundary;
 public class EventDetailsInteractor implements EventDetailsInputBoundary {
     private final EventDetailsUserDataAccessInterface eventDetailsDataAccessObject;
     private final EventDetailsOutputBoundary eventDetailsPresenter;
-//    private final ClientFactory clientFactory;
-//    private final EventHallFactory eventHallFactory;
-//    private final EventBookingFactory eventBookingFactory;
-
 
     public EventDetailsInteractor(EventDetailsUserDataAccessInterface eventDetailsDataAccessInterface,
                             EventDetailsOutputBoundary eventDetailsOutputBoundary) {
         this.eventDetailsDataAccessObject = eventDetailsDataAccessInterface;
         this.eventDetailsPresenter = eventDetailsOutputBoundary;
-//        this.clientFactory = clientFactory;
-//        this.eventHallFactory = eventHallFactory;
-//        this.eventBookingFactory = eventBookingFactory;
     }
 
     @Override
@@ -41,10 +32,6 @@ public class EventDetailsInteractor implements EventDetailsInputBoundary {
             eventDetailsPresenter.preparePartySizeFailView("Please make sure that the party size is a POSITIVE INTEGER number greater than 0.");
         }
         else {
-//            final Client client = clientFactory.create(eventDetailsInputData.getName());
-//            final EventHall eventHall = (EventHall) eventHallFactory.create(eventDetailsInputData.getPartySize());
-//            final EventBooking eventBooking = eventBookingFactory.create(client, eventHall, eventDetailsInputData.getEventDate());
-
             final EventDetailsOutputData eventDetailsOutputData = new EventDetailsOutputData(eventDetailsInputData.getName(), eventDetailsInputData.getEventDate(), eventDetailsInputData.getPartySize(), false);
             eventDetailsPresenter.prepareSuccessView(eventDetailsOutputData);
         }

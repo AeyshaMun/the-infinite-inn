@@ -15,7 +15,7 @@ public class EventDetailsInputData {
         this.partySize = partySize;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 

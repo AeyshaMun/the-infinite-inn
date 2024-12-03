@@ -1,4 +1,4 @@
-package view;
+package main.java.view;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,12 +8,9 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import interface_adapter.BookRoom.BookRoomState;
-import interface_adapter.BookRoom.BookRoomViewModel;
-import interface_adapter.BookRoom.BookRoomController;
-
-import view.LabelTextPanel;
-
+import main.java.interface_adapter.BookRoom.BookRoomState;
+import main.java.interface_adapter.BookRoom.BookRoomViewModel;
+import main.java.interface_adapter.BookRoom.BookRoomController;
 
 public class BookRoomView extends JPanel implements ActionListener {
     private final String viewName = "Book Room";
@@ -50,10 +47,10 @@ public class BookRoomView extends JPanel implements ActionListener {
         roomGroup.add(familyRoomButton);
         roomGroup.add(accessibleRoomButton);
 
-        JPanel singleRoomPanel = createRoomOption( "images/single_room.jpg", "A cozy room for one person.", singleRoomButton);
-        JPanel doubleRoomPanel = createRoomOption( "images/double_room.jpg", "A comfortable room for two people.", doubleRoomButton);
-        JPanel suiteRoomPanel = createRoomOption("images/suite_room.jpg", "A luxurious suite for a family.", familyRoomButton);
-        JPanel deluxeRoomPanel = createRoomOption("images/deluxe_room.jpg", "A deluxe room with premium features.", accessibleRoomButton);
+        JPanel singleRoomPanel = createRoomOption(  BookRoomViewModel.SINGLE_ROOM, singleRoomButton);
+        JPanel doubleRoomPanel = createRoomOption(  BookRoomViewModel.DOUBLE_ROOM, doubleRoomButton);
+        JPanel suiteRoomPanel = createRoomOption( BookRoomViewModel.FAMILY_ROOM, familyRoomButton);
+        JPanel deluxeRoomPanel = createRoomOption(BookRoomViewModel.ACCESSIBLE_ROOM, accessibleRoomButton);
 
         JPanel roomSelectionPanel = new JPanel();
         roomSelectionPanel.setLayout(new GridLayout(2, 2, 10, 10));
@@ -68,6 +65,7 @@ public class BookRoomView extends JPanel implements ActionListener {
 
         bookRoom.addActionListener (
                 new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(bookRoom)) {
                             final BookRoomState currentState = bookroomViewModel.getState();
@@ -80,6 +78,7 @@ public class BookRoomView extends JPanel implements ActionListener {
                     }
                 }
                 );
+
 
         addNameListener();
         addRoomSelectionListener();
@@ -118,15 +117,14 @@ public class BookRoomView extends JPanel implements ActionListener {
         });
     }
 
-    private JPanel createRoomOption(String imagePath, String description, JRadioButton radioButton) {
+    private JPanel createRoomOption(String description, JRadioButton radioButton) {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        JLabel imageLabel = new JLabel(new ImageIcon(imagePath)); // Assumes images are present in the given path
+
         JLabel descriptionLabel = new JLabel(description);
         descriptionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         radioButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        panel.add(imageLabel);
         panel.add(Box.createRigidArea(new Dimension(0, 5)));
         panel.add(descriptionLabel);
         panel.add(Box.createRigidArea(new Dimension(0, 5)));
@@ -159,18 +157,7 @@ public class BookRoomView extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == bookRoom) {
-            String name = nameInputField.getText();
-            String selectedRoom = bookroomViewModel.getState().getRoomType();
-
-            JOptionPane.showMessageDialog(
-                    this, // Parent component
-                    "Name: " + name + "\nSelected Room: " + selectedRoom,
-                    "Booking Confirmation",
-                    JOptionPane.INFORMATION_MESSAGE
-            );
-            System.out.println("Name: " + name + ", Selected Room: " + selectedRoom);
-        }
+        bookroomController.switchToConfirmationView();
     }
 
     public String getViewName() {

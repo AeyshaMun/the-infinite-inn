@@ -20,26 +20,23 @@ public class CheckoutInteractor implements CheckoutInputBoundary {
         final boolean isEventHall = checkoutInputData.isEventHall();
 
         try {
-            // Fetch user/room information
-            boolean userExists = userDataAccessObject.findUserByNameAndRoom(name, roomNumber, isEventHall);
-
-            if (!userExists) {
-                checkoutPresenter.prepareFailView("User or room not found.");
-                return;
+            if (userDataAccessObject.existsByName(name)) {
+                checkoutPresenter.prepareFailView("User not found.");
             }
+            else {
+                // Perform checkout
+                boolean checkoutSuccessful = userDataAccessObject.removeUser(name, roomNumber);
 
-            // Perform checkout
-            boolean checkoutSuccessful = userDataAccessObject.removeUserAndRoom(name, roomNumber, isEventHall);
-
-            if (checkoutSuccessful) {
-                // Prepare success output
-                CheckoutOutputData outputData = new CheckoutOutputData(
-                        name, roomNumber, isEventHall, true, "Checkout successful."
-                );
-                checkoutPresenter.prepareSuccessView(outputData);
-            } else {
-                // Prepare failure output
-                checkoutPresenter.prepareFailView("Failed to complete checkout.");
+                if (checkoutSuccessful) {
+                    // Prepare success output
+                    CheckoutOutputData outputData = new CheckoutOutputData(
+                            name, roomNumber, isEventHall, true, "Checkout successful."
+                    );
+                    checkoutPresenter.prepareSuccessView(outputData);
+                } else {
+                    // Prepare failure output
+                    checkoutPresenter.prepareFailView("Failed to complete checkout.");
+                }
             }
         } catch (Exception e) {
             // Handle unexpected exceptions

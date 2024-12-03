@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity;
 
 public interface SuiteFactoryInterface extends RoomFactory {
     /**
@@ -6,5 +6,5 @@ public interface SuiteFactoryInterface extends RoomFactory {
      *
      * @return the created Suite object.
      */
-    Room createSuite(String name, String room_type);
+    public Suite createSuite(String name, String room_type);
 }

@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity;
 
 public class EventHall implements Room {
     private static int roomCounter;

@@ -30,7 +30,5 @@ public interface LoginDataAccessInterface {
 
     void setCurrentGuest(String name);
 
-    String getCurrentGuest();
-
     String getName(int roomNumber);
 }

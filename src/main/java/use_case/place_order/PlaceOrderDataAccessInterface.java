@@ -11,7 +11,7 @@ public interface PlaceOrderDataAccessInterface {
      * Saves the food order.
      * @param items the order to save
      */
-    void saveOrder(ArrayList<Integer> items, int room);
+    boolean saveOrder(ArrayList<Integer> items, int room);
 
     /**
      * Gets the food order.

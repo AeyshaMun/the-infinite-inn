@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity;
 
 public class SuiteRoom implements Suite {
 
@@ -15,6 +15,7 @@ public class SuiteRoom implements Suite {
         this.price = calculatePrice();
     }
 
+    @Override
     public String getName() {
         return name;
     }
