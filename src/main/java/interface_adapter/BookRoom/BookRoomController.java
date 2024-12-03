@@ -4,7 +4,7 @@ import use_case.BookRoom.BookRoomInputBoundary;
 import use_case.BookRoom.BookRoomInputData;
 
 /**
- * Controller for the Signup Use Case.
+ * Controller for the BookRoom Use Case.
  */
 public class BookRoomController {
 
