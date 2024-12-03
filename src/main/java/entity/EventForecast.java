@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity;
 
 public class EventForecast implements Forecast {
     private final String description;

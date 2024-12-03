@@ -1,19 +1,24 @@
 package main.java.use_case.BookRoom;
 
-import main.java.entity.Suite;
-import main.java.entity.InterfaceSuiteFactory;
+import main.java.entity.*;
+
+import java.util.ArrayList;
 
 public class BookRoomInteractor implements BookRoomInputBoundary {
     private final BookRoomDataAccessInterface suiteDataAccessObject;
     private final BookRoomOutputBoundary suitePresenter;
-    private final InterfaceSuiteFactory suiteFactory;
+    private final SuiteFactoryInterface suiteFactory;
+    private final BookRoomInputData bookRoomInputData;
+    private final GuestFactoryInterface guestFactory;
 
     public BookRoomInteractor(BookRoomDataAccessInterface suiteDataAccessObject,
                               BookRoomOutputBoundary suitePresenter,
-                              InterfaceSuiteFactory suiteFactory) {
+                              SuiteFactoryInterface suiteFactory, BookRoomInputData bookRoomInputData, GuestFactoryInterface guestFactory) {
         this.suiteDataAccessObject = suiteDataAccessObject;
         this.suitePresenter = suitePresenter;
         this.suiteFactory = suiteFactory;
+        this.bookRoomInputData = bookRoomInputData;
+        this.guestFactory = guestFactory;
     }
 
     @Override
@@ -25,10 +30,15 @@ public class BookRoomInteractor implements BookRoomInputBoundary {
             suitePresenter.prepareFailView("Please select a room type.");
         } else {
             final Suite suite = suiteFactory.createSuite(bookroomInputData.getName(), bookroomInputData.getRoomType());
-            suiteDataAccessObject.save(suite);
 
             final BookRoomOutputData bookRoomOutputData = new BookRoomOutputData(suite.getRoomNumber(), suite.getRoomType(), suite.getPrice(), false);
             suitePresenter.prepareSuccessView(bookRoomOutputData);
+
+            ArrayList<Integer> order = new ArrayList<>();
+            final Person guest = guestFactory.createGuest(bookRoomInputData.getName(), "", order, (SuiteRoom) suite);
+
+            suiteDataAccessObject.savePerson(guest);
+
         }
 
     }

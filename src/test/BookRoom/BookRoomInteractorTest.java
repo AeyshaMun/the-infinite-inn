@@ -1,3 +1,5 @@
+package test.BookRoom;
+
 import data_access.InMemoryUserDataAccessObject;
 import entity.CommonUserFactory;
 import entity.User;
