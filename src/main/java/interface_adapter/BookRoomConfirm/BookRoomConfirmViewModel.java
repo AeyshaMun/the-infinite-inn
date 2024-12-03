@@ -1,5 +1,5 @@
-package main.java.interface_adapter.BookRoomConfirm;
-import main.java.interface_adapter.ViewModel;
+package interface_adapter.BookRoomConfirm;
+import interface_adapter.ViewModel;
 
 public class BookRoomConfirmViewModel extends ViewModel<BookRoomConfirmState> {
 

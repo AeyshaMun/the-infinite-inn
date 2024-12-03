@@ -1,4 +1,4 @@
-package main.java.interface_adapter.BookRoomConfirm;
+package interface_adapter.BookRoomConfirm;
 
 public class BookRoomConfirmState {
     private String room_num;

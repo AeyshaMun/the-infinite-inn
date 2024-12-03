@@ -1,6 +1,6 @@
-package main.java.view;
+package view;
 
-import main.java.interface_adapter.BookRoom.BookRoomViewModel;
+import interface_adapter.BookRoom.BookRoomViewModel;
 import main.java.interface_adapter.BookRoomConfirm.BookRoomConfirmState;
 import main.java.interface_adapter.BookRoomConfirm.BookRoomConfirmViewModel;
 

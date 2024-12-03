@@ -172,6 +172,10 @@ public class BookRoomView extends JPanel implements ActionListener {
             System.out.println("Name: " + name + ", Selected Room: " + selectedRoom);
         }
     }
+
+    public String getViewName() {
+        return viewName;
+    }
 }
 
 
