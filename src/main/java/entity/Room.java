@@ -23,7 +23,5 @@ public interface Room {
      * @return the price of the room.
      */
     double getPrice();
-
-    String getRoomType();
 }
 
