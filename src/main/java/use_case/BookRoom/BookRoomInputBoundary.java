@@ -1,4 +1,4 @@
-package use_case.BookRoom;
+package main.java.use_case.BookRoom;
 
 public interface BookRoomInputBoundary {
 
@@ -7,4 +7,9 @@ public interface BookRoomInputBoundary {
      * @param bookroomInputData the input data
      */
     void execute(BookRoomInputData bookroomInputData);
+
+    /**
+     * Executes the switch to confirmation view use case.
+     */
+    void switchToConfirmationView();
 }

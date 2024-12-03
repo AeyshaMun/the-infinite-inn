@@ -15,6 +15,7 @@ public class SuiteRoom implements Suite {
         this.price = calculatePrice();
     }
 
+    @Override
     public String getName() {
         return name;
     }
