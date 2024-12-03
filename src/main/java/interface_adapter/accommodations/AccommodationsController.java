@@ -4,6 +4,9 @@ import use_case.accommodations.AccommodationsInputBoundary;
 import use_case.accommodations.AccommodationsInputData;
 
 public class AccommodationsController {
+    /**
+     * The accommodations controller
+     **/
     private final AccommodationsInputBoundary personAccommodationsUseCaseInteractor;
 
     public AccommodationsController(AccommodationsInputBoundary personAccommodationsUseCaseInteractor) {
