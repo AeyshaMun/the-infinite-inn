@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity.roombooking;
 
 public class SuiteRoom implements Suite {
 

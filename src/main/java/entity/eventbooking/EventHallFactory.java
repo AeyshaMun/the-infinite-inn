@@ -1,4 +1,6 @@
-package entity;
+package main.java.entity.eventbooking;
+
+import main.java.entity.Room;
 
 public class EventHallFactory implements EventHallFactoryInterface {
 

@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity.eventbooking;
 
 public interface Forecast {
     boolean isEstimated();
@@ -10,6 +10,4 @@ public interface Forecast {
     double getPrecipitation();
 
     double getWindSpeed();
-
-    boolean isUnsuitableForOutdoor();
 }

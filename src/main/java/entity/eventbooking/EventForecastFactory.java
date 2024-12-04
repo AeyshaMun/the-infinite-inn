@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity.eventbooking;
 
 public class EventForecastFactory implements ForecastFactory {
     @Override

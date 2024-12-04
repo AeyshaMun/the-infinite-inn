@@ -1,6 +1,6 @@
-package interface_adapter.eventforecast;
+package main.java.use_case.eventforecast;
 
-import entity.EventForecast;
+import main.java.entity.eventbooking.EventForecast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

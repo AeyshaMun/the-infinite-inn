@@ -1,4 +1,7 @@
-package entity;
+package main.java.entity.eventbooking;
+
+import main.java.entity.Room;
+import main.java.entity.RoomFactory;
 
 public interface EventHallFactoryInterface extends RoomFactory {
     /**

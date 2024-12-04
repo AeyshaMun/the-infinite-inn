@@ -1,4 +1,4 @@
-package entity;
+package main.java.entity.eventbooking;
 
 public class EventForecast implements Forecast {
     private final String description;
@@ -34,13 +34,5 @@ public class EventForecast implements Forecast {
     public double getWindSpeed() {
         return windSpeed;
     }
-
-    public boolean isUnsuitableForOutdoor() {
-        return precipitation > 1.0 ||
-                temperature < 10.0 || temperature > 35.0 ||
-                windSpeed > 20.0 ||
-                description.contains("Thunderstorm") || description.contains("Snow");
-    }
-
 }
 

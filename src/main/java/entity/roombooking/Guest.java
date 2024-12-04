@@ -1,6 +1,6 @@
-package entity;
+package main.java.entity.roombooking;
 
-import data_access.DBPersonDataAccessObject;
+import main.java.data_access.DBPersonDataAccessObject;
 
 import java.util.ArrayList;
 

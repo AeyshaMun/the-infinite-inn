@@ -1,4 +1,6 @@
-package entity;
+package main.java.entity.eventbooking;
+
+import main.java.entity.Person;
 
 import java.util.ArrayList;
 
