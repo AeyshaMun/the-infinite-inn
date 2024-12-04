@@ -30,8 +30,6 @@ from a set list of meals. At the end of their stay, users can check out of
 their room or event hall once their stay is over. 
 
 ### Features/User Stories
-For more details, please see our [project specification](https://docs.google.com/document/d/1gr9jYt8y9HYQpopzQcvW1wvnApGc0LRFc68l4Erol9E/edit?tab=t.0).
-
 #### Team:
 - As a guest, I want to be able to log into my room booking to gain access to ordering room 
 service, specifying accommodations, or checking out of my room.
