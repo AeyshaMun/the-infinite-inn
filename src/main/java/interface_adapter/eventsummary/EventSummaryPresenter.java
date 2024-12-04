@@ -1,9 +1,9 @@
-package interface_adapter.eventsummary;
+package main.java.interface_adapter.eventsummary;
 
 import interface_adapter.ViewManagerModel;
-import interface_adapter.main_page.MainPageViewModel;
-import use_case.eventsummary.EventSummaryOutputBoundary;
-import use_case.eventsummary.EventSummaryOutputData;
+import main.java.interface_adapter.main_page.MainPageViewModel;
+import main.java.use_case.eventsummary.EventSummaryOutputBoundary;
+import main.java.use_case.eventsummary.EventSummaryOutputData;
 
 /**
  * The Presenter for the EventSummary Use Case.

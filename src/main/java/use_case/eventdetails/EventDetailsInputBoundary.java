@@ -1,13 +1,13 @@
-package use_case.eventdetails;
+package main.java.use_case.eventdetails;
 
-import use_case.eventdetails.EventDetailsInputData;
+import java.io.IOException;
 
 public interface EventDetailsInputBoundary {
     /**
      * Executes the event details use case.
      * @param eventDetailsInputData the input data
      */
-    void execute(EventDetailsInputData eventDetailsInputData);
+    void execute(EventDetailsInputData eventDetailsInputData) throws IOException;
 
     /**
      * Executes the switch to event forecast view use case.

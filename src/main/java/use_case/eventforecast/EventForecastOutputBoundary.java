@@ -1,7 +1,6 @@
-package use_case.eventforecast;
+package main.java.use_case.eventforecast;
 
-import entity.EventForecast;
-import use_case.eventforecast.EventForecastOutputData;
+import main.java.entity.eventbooking.EventForecast;
 
 /**
  * The output boundary for the Event Forecast Use Case.
@@ -30,5 +29,7 @@ public interface EventForecastOutputBoundary {
     void switchToHomeView();
 
     void prepareForecastView(EventForecast eventForecast);
+
+    void prepareChoices(boolean isUnsuitableForOutdoors);
 }
 

@@ -1,4 +1,4 @@
-package use_case.eventdetails;
+package main.java.use_case.eventdetails;
 
 public class EventDetailsOutputData {
     private final String name;

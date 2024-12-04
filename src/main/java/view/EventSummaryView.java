@@ -1,8 +1,8 @@
 package main.java.view;
 
-import interface_adapter.eventsummary.EventSummaryController;
-import interface_adapter.eventsummary.EventSummaryState;
-import interface_adapter.eventsummary.EventSummaryViewModel;
+import main.java.interface_adapter.eventsummary.EventSummaryController;
+import main.java.interface_adapter.eventsummary.EventSummaryState;
+import main.java.interface_adapter.eventsummary.EventSummaryViewModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import static interface_adapter.eventsummary.EventSummaryViewModel.BACK_BUTTON_LABEL;
+import static main.java.interface_adapter.eventsummary.EventSummaryViewModel.BACK_BUTTON_LABEL;
 
 public class EventSummaryView extends JPanel implements PropertyChangeListener {
 

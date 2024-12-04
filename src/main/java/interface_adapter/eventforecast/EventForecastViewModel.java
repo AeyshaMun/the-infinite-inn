@@ -1,4 +1,4 @@
-package interface_adapter.eventforecast;
+package main.java.interface_adapter.eventforecast;
 
 import main.java.interface_adapter.ViewModel;
 

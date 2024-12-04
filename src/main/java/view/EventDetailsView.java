@@ -1,8 +1,8 @@
-package view;
+package main.java.view;
 
-import interface_adapter.eventdetails.EventDetailsController;
-import interface_adapter.eventdetails.EventDetailsState;
-import interface_adapter.eventdetails.EventDetailsViewModel;
+import main.java.interface_adapter.eventdetails.EventDetailsController;
+import main.java.interface_adapter.eventdetails.EventDetailsState;
+import main.java.interface_adapter.eventdetails.EventDetailsViewModel;
 
 
 import javax.swing.*;
@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 
 /**
  * The View for the Event Details Use Case.
@@ -22,8 +23,8 @@ public class EventDetailsView extends JPanel implements ActionListener, Property
 
     private final EventDetailsViewModel eventDetailsViewModel;
     private final JTextField nameInputField = new JTextField(15);
-    private final JPasswordField eventDateInputField = new JPasswordField(15);
-    private final JPasswordField partySizeInputField = new JPasswordField(15);
+    private final JTextField eventDateInputField = new JTextField(15);
+    private final JTextField partySizeInputField = new JTextField(15);
     private EventDetailsController eventDetailsController;
 
     private final JButton back;
@@ -52,6 +53,17 @@ public class EventDetailsView extends JPanel implements ActionListener, Property
         next.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
+                        final EventDetailsState currentState = eventDetailsViewModel.getState();
+
+                        try {
+                            eventDetailsController.execute(
+                                    currentState.getName(),
+                                    currentState.getEventDate(),
+                                    currentState.getPartySize()
+                            );
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                         eventDetailsController.switchToEventForecastView();
                     }
             }
@@ -109,7 +121,7 @@ public class EventDetailsView extends JPanel implements ActionListener, Property
 
             private void documentListenerHelper() {
                 final EventDetailsState currentState = eventDetailsViewModel.getState();
-                currentState.setEventDate(new String(eventDateInputField.getPassword()));
+                currentState.setEventDate(eventDateInputField.getText());
                 eventDetailsViewModel.setState(currentState);
             }
 
@@ -135,7 +147,7 @@ public class EventDetailsView extends JPanel implements ActionListener, Property
 
             private void documentListenerHelper() {
                 final EventDetailsState currentState = eventDetailsViewModel.getState();
-                currentState.setPartySize(new String(partySizeInputField.getPassword())); // i'll fix this one sec!!
+                currentState.setPartySize(partySizeInputField.getText());
                 eventDetailsViewModel.setState(currentState);
             }
 

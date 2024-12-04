@@ -1,5 +1,6 @@
-package use_case.eventdetails;
+package main.java.use_case.eventdetails;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -18,7 +19,7 @@ public class EventDetailsInteractor implements EventDetailsInputBoundary {
     }
 
     @Override
-    public void execute(EventDetailsInputData eventDetailsInputData) {
+    public void execute(EventDetailsInputData eventDetailsInputData) throws IOException {
         if (eventDetailsDataAccessObject.existsByName(eventDetailsInputData.getName())) {
             eventDetailsPresenter.prepareNameFailView("A booking already exists under this name.");
         }

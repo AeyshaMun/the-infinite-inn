@@ -1,4 +1,4 @@
-package interface_adapter.eventforecast;
+package main.java.interface_adapter.eventforecast;
 
 /**
  * The state for the Event Forecast View Model.

@@ -1,6 +1,4 @@
-package use_case.eventdetails;
-
-import entity.Person;
+package main.java.use_case.eventdetails;
 
 /**
  * DAO for the Event Details Use Case.

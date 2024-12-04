@@ -1,6 +1,6 @@
-package use_case.eventforecast;
+package main.java.use_case.eventforecast;
 
-import entity.Person;
+import main.java.entity.Person;
 
 /**
  * DAO for the Event Details Use Case.

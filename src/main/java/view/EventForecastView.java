@@ -1,8 +1,8 @@
-package view;
+package main.java.view;
 
-import interface_adapter.eventdetails.EventDetailsViewModel;
-import interface_adapter.eventforecast.EventForecastController;
-import interface_adapter.eventforecast.EventForecastState;
+import main.java.interface_adapter.eventdetails.EventDetailsViewModel;
+import main.java.interface_adapter.eventforecast.EventForecastController;
+import main.java.interface_adapter.eventforecast.EventForecastState;
 import interface_adapter.eventforecast.EventForecastViewModel;
 
 import javax.swing.*;

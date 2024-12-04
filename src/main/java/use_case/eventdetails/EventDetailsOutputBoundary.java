@@ -1,6 +1,6 @@
-package use_case.eventdetails;
+package main.java.use_case.eventdetails;
 
-import use_case.eventdetails.EventDetailsOutputData;
+import java.io.IOException;
 
 /**
  * The output boundary for the Event Details Use Case.
@@ -10,7 +10,7 @@ public interface EventDetailsOutputBoundary {
      * Prepares the success view for the Event details Use Case.
      * @param outputData the output data
      */
-    void prepareSuccessView(EventDetailsOutputData outputData);
+    void prepareSuccessView(EventDetailsOutputData outputData) throws IOException;
 
     /**
      * Prepares the name failure view for the Event Details Use Case.

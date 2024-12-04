@@ -1,7 +1,9 @@
-package interface_adapter.eventdetails;
+package main.java.interface_adapter.eventdetails;
 
-import use_case.eventdetails.EventDetailsInputBoundary;
-import use_case.eventdetails.EventDetailsInputData;
+import main.java.use_case.eventdetails.EventDetailsInputBoundary;
+import main.java.use_case.eventdetails.EventDetailsInputData;
+
+import java.io.IOException;
 
 /**
  * Controller for the Event Details Use Case.
@@ -20,7 +22,7 @@ public class EventDetailsController {
      * @param eventDate the date of the event
      * @param partySizeStr the number of people attending the event
      */
-    public void execute(String name, String eventDate, String partySizeStr) {
+    public void execute(String name, String eventDate, String partySizeStr) throws IOException {
         try {
             int partySize = convertToInt(partySizeStr);
 
@@ -29,7 +31,7 @@ public class EventDetailsController {
 
             userEventDetailsUseCaseInteractor.execute(eventDetailsInputData);
         }
-        catch (IllegalArgumentException e) {
+        catch (IllegalArgumentException | IOException e) {
             int partySize = -1;
 
             final EventDetailsInputData eventDetailsInputData = new EventDetailsInputData(
