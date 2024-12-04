@@ -20,8 +20,8 @@ public class EventDetailsView extends JPanel implements ActionListener, Property
 
     private final EventDetailsViewModel eventDetailsViewModel;
     private final JTextField nameInputField = new JTextField(15);
-    private final JPasswordField eventDateInputField = new JPasswordField(15);
-    private final JPasswordField partySizeInputField = new JPasswordField(15);
+    private final JTextField eventDateInputField = new JTextField(15);
+    private final JTextField partySizeInputField = new JTextField(15);
     private EventDetailsController eventDetailsController;
 
     private final JButton back;
