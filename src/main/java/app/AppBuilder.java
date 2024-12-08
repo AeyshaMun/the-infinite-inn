@@ -58,10 +58,10 @@ import use_case.*;
 public class AppBuilder {
 
     // Core application components
-    private final JPanel cardPanel = new JPanel();
-    private final CardLayout cardLayout = new CardLayout();
-    private final ViewManagerModel viewManagerModel = new ViewManagerModel();
-    private final ViewManager viewManager = new ViewManager(cardPanel, cardLayout, viewManagerModel);
+    private JPanel cardPanel = new JPanel();
+    private CardLayout cardLayout = new CardLayout();
+    private ViewManagerModel viewManagerModel = new ViewManagerModel();
+    private ViewManager viewManager = new ViewManager(cardPanel, cardLayout, viewManagerModel);
 
     // Data access object
     private DBPersonDataAccessObject personDataAccessObject;
