@@ -23,7 +23,13 @@ import use_case.place_order.PlaceOrderDataAccessInterface;
 
 import java.util.ArrayList;
 
-public class DBPersonDataAccessObject implements AccommodationsDataAccessInterface, BookRoomDataAccessInterface, CheckoutUserDataAccessInterface, EventDetailsUserDataAccessInterface, EventForecastUserDataAccessInterface, PlaceOrderDataAccessInterface, LoginDataAccessInterface {
+public class DBPersonDataAccessObject implements AccommodationsDataAccessInterface,
+        BookRoomDataAccessInterface,
+        CheckoutUserDataAccessInterface,
+        EventDetailsUserDataAccessInterface,
+        EventForecastUserDataAccessInterface,
+        PlaceOrderDataAccessInterface,
+        LoginDataAccessInterface {
     /**
      * Connects to the database.
      * this code is from MongoDB's documentation.
@@ -266,4 +272,4 @@ public class DBPersonDataAccessObject implements AccommodationsDataAccessInterfa
 
         return result;
     }
-}
+}}
