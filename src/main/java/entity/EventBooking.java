@@ -1,4 +1,4 @@
-package main.java.entity;
+package entity;
 
 public class EventBooking implements Booking {
     private final EventHall eventHall;

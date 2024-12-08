@@ -1,7 +1,7 @@
-package main.java.interface_adapter.BookRoom;
+package interface_adapter.BookRoom;
 
-import main.java.use_case.BookRoom.BookRoomInputBoundary;
-import main.java.use_case.BookRoom.BookRoomInputData;
+import use_case.BookRoom.BookRoomInputBoundary;
+import use_case.BookRoom.BookRoomInputData;
 
 /**
  * Controller for the BookRoom Use Case.

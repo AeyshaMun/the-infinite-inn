@@ -1,7 +1,7 @@
 package interface_adapter.eventforecast;
 
-import use_case.eventforecast.EventForecastInputBoundary;
-import use_case.eventforecast.EventForecastInputData;
+import java.use_case.eventforecast.EventForecastInputBoundary;
+import java.use_case.eventforecast.EventForecastInputData;
 
 
 /**

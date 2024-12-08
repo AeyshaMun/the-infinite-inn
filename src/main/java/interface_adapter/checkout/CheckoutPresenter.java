@@ -1,7 +1,6 @@
-package main.java.interface_adapter.checkout;
+package interface_adapter.checkout;
 
 import interface_adapter.ViewManagerModel;
-import interface_adapter.ViewModel;
 
 import interface_adapter.logged_in.LoggedInState;
 import interface_adapter.logged_in.LoggedInViewModel;

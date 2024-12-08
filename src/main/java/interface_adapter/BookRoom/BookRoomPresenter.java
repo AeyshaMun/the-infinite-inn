@@ -1,10 +1,10 @@
-package main.java.interface_adapter.BookRoom;
+package interface_adapter.BookRoom;
 
 import main.java.interface_adapter.ViewManagerModel;
-import main.java.interface_adapter.Confirmation.ConfirmationState;
-import main.java.interface_adapter.Confirmation.ConfirmationViewModel;
-import main.java.use_case.BookRoom.BookRoomOutputData;
-import main.java.use_case.BookRoom.BookRoomOutputBoundary;
+import interface_adapter.Confirmation.ConfirmationState;
+import interface_adapter.Confirmation.ConfirmationViewModel;
+import java.use_case.BookRoom.BookRoomOutputData;
+import java.use_case.BookRoom.BookRoomOutputBoundary;
 
 public class BookRoomPresenter implements BookRoomOutputBoundary {
 

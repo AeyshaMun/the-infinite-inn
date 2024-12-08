@@ -1,7 +1,6 @@
 package view;
 
 import interface_adapter.accommodations.AccommodationsController;
-import interface_adapter.accommodations.AccommodationsPresenter;
 import interface_adapter.accommodations.AccommodationsState;
 import interface_adapter.accommodations.AccommodationsViewModel;
 
@@ -13,6 +12,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public class AccommodationsView extends JFrame implements ActionListener, PropertyChangeListener {
+    private final String viewName = "Accommodations";
     private AccommodationsViewModel viewModel;
     private JTextField nameTextField;
     private JTextArea accommodationsTextArea;
@@ -116,5 +116,9 @@ public class AccommodationsView extends JFrame implements ActionListener, Proper
         } else if (e.getSource() == cancelButton) {
             resetView();
         }
+    }
+
+    public String getViewName() {
+        return viewName;
     }
 }

@@ -1,7 +1,5 @@
 package use_case.eventforecast;
 
-import use_case.eventforecast.EventForecastInputData;
-
 import java.io.IOException;
 
 public interface EventForecastInputBoundary {

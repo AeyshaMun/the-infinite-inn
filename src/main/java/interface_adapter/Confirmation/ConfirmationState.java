@@ -1,4 +1,4 @@
-package main.java.interface_adapter.Confirmation;
+package interface_adapter.Confirmation;
 
 public class ConfirmationState {
     private int room_num;

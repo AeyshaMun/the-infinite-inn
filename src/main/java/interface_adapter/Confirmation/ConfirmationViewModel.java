@@ -1,5 +1,5 @@
-package main.java.interface_adapter.Confirmation;
-import main.java.interface_adapter.ViewModel;
+package interface_adapter.Confirmation;
+import interface_adapter.ViewModel;
 
 public class ConfirmationViewModel extends ViewModel<ConfirmationState> {
 

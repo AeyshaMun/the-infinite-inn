@@ -1,14 +1,14 @@
-package main.java.view;
+package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import javax.swing.*;
+import interface_adapter.Confirmation.ConfirmationState;
+import interface_adapter.Confirmation.ConfirmationViewModel;
 
-import main.java.interface_adapter.Confirmation.ConfirmationState;
-import main.java.interface_adapter.Confirmation.ConfirmationViewModel;
+import javax.swing.*;
 
 /**
  * The View for when the user has booked a room.

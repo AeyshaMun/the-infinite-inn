@@ -1,6 +1,6 @@
-package main.java.use_case.BookRoom;
+package use_case.BookRoom;
 
-import main.java.entity.*;
+import entity.*;
 
 import java.util.ArrayList;
 

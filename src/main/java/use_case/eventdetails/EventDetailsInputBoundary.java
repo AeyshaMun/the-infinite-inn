@@ -1,7 +1,5 @@
 package use_case.eventdetails;
 
-import use_case.eventdetails.EventDetailsInputData;
-
 public interface EventDetailsInputBoundary {
     /**
      * Executes the event details use case.

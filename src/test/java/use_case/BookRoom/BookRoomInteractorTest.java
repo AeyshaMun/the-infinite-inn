@@ -1,12 +1,10 @@
-package test.BookRoom;
+package use_case.BookRoom;
 
-import data_access.InMemoryUserDataAccessObject;
+import data_access.DBPersonDataAccessObject;
 import entity.CommonUserFactory;
 import entity.User;
 import entity.UserFactory;
 import org.junit.Test;
-
-import java.time.LocalDateTime;
 
 import static org.junit.Assert.*;
 

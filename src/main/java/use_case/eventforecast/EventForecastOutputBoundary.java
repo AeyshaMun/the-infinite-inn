@@ -1,7 +1,6 @@
 package use_case.eventforecast;
 
 import entity.EventForecast;
-import use_case.eventforecast.EventForecastOutputData;
 
 /**
  * The output boundary for the Event Forecast Use Case.
