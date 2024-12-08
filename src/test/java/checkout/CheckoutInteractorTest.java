@@ -22,7 +22,7 @@ class CheckoutInteractorTest {
     }
 
     @Test
-    void testExecute_UserNotFound() {
+    void execute_UserNotFoundTest() {
         // Arrange
         CheckoutInputData inputData = new CheckoutInputData("John Doe", 101, false);
         when(userDataAccessMock.existsByName("John Doe")).thenReturn(false);
@@ -36,7 +36,7 @@ class CheckoutInteractorTest {
     }
 
     @Test
-    void testExecute_CheckoutSuccessful() {
+    void execute_CheckoutSuccessfulTest() {
         // Arrange
         CheckoutInputData inputData = new CheckoutInputData("John Doe", 101, false);
         when(userDataAccessMock.existsByName("John Doe")).thenReturn(true);
@@ -53,7 +53,7 @@ class CheckoutInteractorTest {
     }
 
     @Test
-    void testExecute_CheckoutFailed() {
+    void execute_CheckoutFailedTest() {
         // Arrange
         CheckoutInputData inputData = new CheckoutInputData("John Doe", 101, false);
         when(userDataAccessMock.existsByName("John Doe")).thenReturn(true);
@@ -68,7 +68,7 @@ class CheckoutInteractorTest {
     }
 
     @Test
-    void testExecute_UnexpectedException() {
+    void execute_UnexpectedExceptionTest() {
         // Arrange
         CheckoutInputData inputData = new CheckoutInputData("John Doe", 101, false);
         when(userDataAccessMock.existsByName("John Doe")).thenReturn(true);
@@ -82,7 +82,7 @@ class CheckoutInteractorTest {
     }
 
     @Test
-    void testSwitchToLoggedInView() {
+    void switchToLoggedInViewTest() {
         // Act
         interactor.switchtoLoggedInView();
 
